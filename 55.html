@@ -1,0 +1,1792 @@
+<!doctype html>
+<html lang="uk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Формуляр AS350B3e № 9157</title>
+<meta name="formular-app" content="2.1.0">
+<style>
+/* Електронний формуляр ПС. Один файл: програма + дані. Працює без інтернету в будь-якому сучасному браузері. */
+:root {
+  --bg: #eef0f2; --surface: #ffffff; --surface-2: #f6f7f8; --line: #dcdfe4; --line-soft: #e9ebee;
+  --text: #1c2229; --muted: #5d6672; --faint: #8d95a1;
+  --accent: #2f5d7c; --accent-strong: #244a63; --accent-soft: #e3edf3; --on-accent: #ffffff;
+  --go: #4d7350; --on-go: #ffffff;
+  --bad: #c2492f; --bad-bg: #fbe9e4; --warn: #9a6407; --warn-bg: #fcf1dc; --ok: #3f6b3c; --ok-bg: #e5f0e3; --chg: #6a4fa8; --chg-bg: #eee8f8;
+  --paper: #ffffff; --ink: #000000;
+  --shadow: 0 1px 2px rgba(20,30,40,.06), 0 8px 24px rgba(20,30,40,.08);
+  --ui: "Segoe UI", system-ui, -apple-system, Roboto, "Noto Sans", Arial, sans-serif;
+  --print: Arial, "Liberation Sans", "Helvetica Neue", Helvetica, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #13171b; --surface: #1b2026; --surface-2: #21272e; --line: #2e363f; --line-soft: #262d35;
+  --text: #dfe5eb; --muted: #9aa6b2; --faint: #6e7986;
+  --accent: #7fb0d1; --accent-strong: #a2c7e0; --accent-soft: #1f3241; --on-accent: #0d1720;
+  --go: #86b386; --on-go: #0e1a0e;
+  --bad: #f08a72; --bad-bg: #3a211b; --warn: #f0bf5f; --warn-bg: #352a14; --ok: #93c58f; --ok-bg: #1c2c1b; --chg: #b9a2f0; --chg-bg: #2a2440;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #13171b; --surface: #1b2026; --surface-2: #21272e; --line: #2e363f; --line-soft: #262d35;
+  --text: #dfe5eb; --muted: #9aa6b2; --faint: #6e7986;
+  --accent: #7fb0d1; --accent-strong: #a2c7e0; --accent-soft: #1f3241; --on-accent: #0d1720;
+  --go: #86b386; --on-go: #0e1a0e;
+  --bad: #f08a72; --bad-bg: #3a211b; --warn: #f0bf5f; --warn-bg: #352a14; --ok: #93c58f; --ok-bg: #1c2c1b; --chg: #b9a2f0; --chg-bg: #2a2440;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--ui); -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+a { color: var(--accent); }
+
+.wrap { max-width: 1320px; margin: 0 auto; padding-block: 14px 90px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 14px; }
+.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.ident { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.spine-ico { width: 42px; height: 52px; flex: none; border-radius: 3px 8px 8px 3px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font: 700 11px/1 var(--print); letter-spacing: .04em; box-shadow: inset 5px 0 0 rgba(0,0,0,.18); }
+.ident h1 { margin: 0; font-size: 21px; line-height: 1.2; text-wrap: balance; }
+.ident .sub { color: var(--muted); font-size: 13px; }
+.ident .sub b { color: var(--text); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; white-space: nowrap; font-size: 13.5px; line-height: 1.3; text-decoration: none; color: var(--text); }
+.btn:hover { border-color: var(--accent); }
+.btn:focus-visible, .tab:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .card:focus-visible, tr:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn.primary:hover { background: var(--accent-strong); }
+.btn.go { background: var(--go); border-color: var(--go); color: var(--on-go); font-weight: 600; }
+.btn.danger { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); }
+.btn.sm { padding: 5px 10px; font-size: 12.5px; }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--muted); }
+.btn[disabled] { opacity: .5; cursor: default; }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.chip.bad { background: var(--bad-bg); color: var(--bad); } .chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.ok { background: var(--ok-bg); color: var(--ok); } .chip.chg { background: var(--chg-bg); color: var(--chg); }
+.chip.muted { background: var(--surface-2); color: var(--muted); }
+.who { font-size: 12.5px; color: var(--muted); }
+.who b { color: var(--text); }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; font-size: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+.rems { display: flex; flex-direction: column; gap: 8px; }
+.rem { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; padding: 10px 14px; border-radius: 10px; font-size: 13.5px; border-left: 4px solid currentColor; }
+.rem span { min-width: 0; flex: 1 1 300px; color: var(--text); }
+.rem.warn { background: var(--warn-bg); color: var(--warn); } .rem.bad { background: var(--bad-bg); color: var(--bad); } .rem.info { background: var(--accent-soft); color: var(--accent); }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tab { background: none; border: 0; padding: 9px 14px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; font-size: 14px; }
+.tab[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); font-weight: 600; }
+.tab .n { font-size: 11.5px; color: var(--faint); margin-left: 3px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; min-width: 0; }
+.panel-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line-soft); }
+.panel-h h2 { margin: 0; font-size: 15px; }
+.panel-b { padding: 14px 16px; }
+.muted { color: var(--muted); } .faint { color: var(--faint); } .small { font-size: 12.5px; }
+.empty { padding: 40px 16px; text-align: center; color: var(--muted); }
+.empty b { color: var(--text); display: block; font-size: 15px; margin-bottom: 4px; }
+
+.spreads { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 6px; }
+.sp { position: relative; flex: none; display: flex; flex-direction: column; align-items: flex-start; padding: 7px 13px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; min-width: 108px; overflow: hidden; color: var(--text); }
+.sp b { font-size: 13.5px; } .sp span { font-size: 11.5px; color: var(--muted); } .sp em { font-style: normal; color: var(--warn); font-weight: 600; }
+.sp i { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--accent); opacity: .5; }
+.sp[aria-selected="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+
+.tw { overflow-x: auto; }
+table.grid { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.grid th { text-align: left; font-size: 11px; font-weight: 600; color: var(--muted); padding: 8px 9px; border-bottom: 1px solid var(--line); vertical-align: bottom; line-height: 1.25; background: var(--surface-2); }
+table.grid td { padding: 9px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+table.grid td.num, table.grid th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.grid tr.e { cursor: pointer; }
+table.grid tr.e:hover td:not(.sp-col) { background: var(--accent-soft); }
+table.grid .pg-h th { background: var(--surface); color: var(--text); font-size: 12.5px; }
+table.grid .pg-h th span { color: var(--faint); font-weight: 400; }
+table.grid .sp-col { width: 8px; min-width: 8px; padding: 0; background: linear-gradient(90deg, var(--line-soft), var(--bg) 50%, var(--line-soft)); border-bottom: 0; }
+table.grid .txt { min-width: 130px; white-space: pre-line; }
+table.grid .wd { min-width: 200px; white-space: pre-line; }
+table.grid .nw { white-space: nowrap; }
+table.grid .sig { min-width: 150px; font-size: 12px; line-height: 1.45; }
+tr.voided td:not(.sp-col) { color: var(--faint); }
+tr.voided td.wd, tr.voided td.txt { text-decoration: line-through; text-decoration-color: var(--bad); }
+.flags { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; margin-top: 4px; }
+.cards { display: none; flex-direction: column; }
+.card { text-align: left; border: 0; border-bottom: 1px solid var(--line-soft); background: none; padding: 13px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 6px; color: var(--text); width: 100%; }
+.card:last-child { border-bottom: 0; }
+.card .what { font-size: 14px; line-height: 1.4; white-space: pre-line; }
+.card.voided .what { text-decoration: line-through; color: var(--faint); }
+.card dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 0; }
+.card dt { font-size: 11px; color: var(--faint); } .card dd { margin: 0; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
+.card .meta { font-size: 12.5px; color: var(--muted); }
+.row-between { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.fab { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 5; display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px 13px 16px; border-radius: 999px; border: 0; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 15px; box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 40%, transparent); cursor: pointer; }
+.fab svg { width: 20px; height: 20px; }
+
+/* перегляд сторінок на екрані */
+.preview { display: flex; flex-direction: column; gap: 10px; }
+.pv-stage { overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+.pv-inner { transform-origin: top left; display: flex; gap: 6mm; width: max-content; }
+.pv-inner .pg { box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+
+/* реєстр повноважень, журнал */
+.auth-list { display: flex; flex-direction: column; }
+.holder { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 16px; padding: 14px 16px; border-bottom: 1px solid var(--line-soft); align-items: start; }
+.holder:last-child { border-bottom: 0; }
+.holder h3 { margin: 0; font-size: 15px; }
+.auths { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.auth { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 13px; background: var(--surface-2); text-align: left; cursor: pointer; color: var(--text); }
+.auth b { font-family: ui-monospace, Consolas, monospace; font-size: 13px; }
+.auth .o { font-size: 11px; color: var(--muted); display: block; }
+.auth.off { opacity: .55; }
+.log { display: flex; flex-direction: column; }
+.log-i { padding: 10px 16px; border-bottom: 1px solid var(--line-soft); font-size: 13px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 14px; }
+.log-i:last-child { border-bottom: 0; }
+.log-i ul { margin: 4px 0 0; padding-left: 18px; color: var(--muted); }
+.log-i s { color: var(--bad); }
+
+/* діалоги */
+dialog { border: 0; border-radius: 14px; padding: 0; width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+dialog::backdrop { background: rgba(10, 16, 22, .45); }
+.dlg { display: flex; flex-direction: column; max-height: calc(100dvh - 24px); }
+.dlg-h { padding: 14px 18px 10px; border-bottom: 1px solid var(--line-soft); display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.dlg-h h2 { margin: 0; font-size: 17px; }
+.dlg-h .sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.dlg-b { padding: 14px 18px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+.dlg-f { padding: 12px 18px; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.dlg-f .r { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.fs { display: flex; flex-direction: column; gap: 10px; }
+.fs > h4 { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+.fld { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.fld.full { grid-column: 1 / -1; }
+.fld label { font-size: 12.5px; color: var(--muted); }
+.fld input, .fld select, .fld textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font-size: 15px; }
+.fld textarea { min-height: 76px; resize: vertical; }
+.fld .hint { font-size: 12px; color: var(--faint); }
+.fld.err > input, .fld.err > select, .fld.err > textarea, .fld.err .hmf input { border-color: var(--bad); }
+.fld .msg { font-size: 12px; color: var(--bad); }
+.check { flex-direction: row; align-items: center; gap: 8px; }
+.check input { width: auto; }
+.calcbox { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 10px 12px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--line-soft); }
+.calcbox div { min-width: 0; } .calcbox span { display: block; font-size: 11.5px; color: var(--muted); line-height: 1.25; }
+.calcbox b { font-size: 16px; font-variant-numeric: tabular-nums; } .calcbox i { display: block; font-style: normal; font-size: 11px; color: var(--faint); }
+.calcbox .man b { color: var(--chg); } .calcbox .bad b, .calcbox .bad i { color: var(--bad); }
+.pick { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+.pick-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 12px; }
+.pick-h b { font-size: 13px; }
+.pick .std { font-size: 13px; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); white-space: pre-line; }
+.majorchk { display: flex; align-items: flex-start; gap: 8px; padding: 10px 12px; border-radius: 9px; border: 1px solid var(--line); cursor: pointer; }
+.majorchk:has(input:checked) { border-color: var(--chg); background: var(--chg-bg); }
+.majorchk input { margin-top: 3px; } .majorchk span { font-size: 13px; } .majorchk small { display: block; color: var(--muted); font-size: 12px; }
+details.mancor { border: 1px dashed var(--line); border-radius: 9px; padding: 8px 12px; }
+details.mancor summary { cursor: pointer; font-size: 12.5px; color: var(--muted); }
+.lib-i { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 14px; padding: 11px 16px; border-bottom: 1px solid var(--line-soft); align-items: start; }
+.lib-i:last-child { border-bottom: 0; }
+.lib-i .t { white-space: pre-line; font-size: 13.5px; overflow-wrap: anywhere; }
+.lib-i .u { font-size: 11.5px; color: var(--faint); margin-top: 2px; }
+.lib-i .actions { gap: 4px; }
+.hmf { display: flex; align-items: center; gap: 6px; }
+.hmf input:first-child { flex: 1 1 auto; min-width: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.hmf input.mm { flex: none; width: 4.2em; text-align: left; font-variant-numeric: tabular-nums; }
+.hmf .colon { font-size: 20px; font-weight: 700; line-height: 1; color: var(--text); }
+.hmf .u { font-size: 12px; color: var(--faint); }
+.note { padding: 10px 12px; border-radius: 9px; background: var(--accent-soft); font-size: 13px; line-height: 1.45; }
+.note.warn { background: var(--warn-bg); } .note.bad { background: var(--bad-bg); }
+.kv { display: grid; grid-template-columns: minmax(110px, 38%) minmax(0, 1fr); gap: 6px 12px; font-size: 13.5px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 9px; font-size: 13.5px; box-shadow: var(--shadow); max-width: calc(100vw - 32px); }
+
+/* ===== сторінки формуляра (однакові на екрані і на папері) ===== */
+.pg { position: relative; width: 210mm; height: 148mm; background: #fff; color: #000; font-family: var(--print); overflow: hidden; flex: none; }
+.pg.L { padding: 7mm 13mm 8mm 7mm; } .pg.R { padding: 7mm 7mm 8mm 13mm; } .pg.X { padding: 9mm 10mm 8mm 10mm; }
+.pg .band { height: 7.5mm; display: flex; justify-content: space-between; align-items: flex-start; gap: 4mm; font-size: 7.6pt; line-height: 1.2; white-space: nowrap; }
+.pg .band b { font-weight: 700; }
+.pg .tbl { border: .35mm solid #000; }
+.pg .hrow, .pg .row { display: grid; }
+.pg .hrow { background: #ececec; border-bottom: .3mm solid #000; }
+.pg .hc { padding: 1mm; text-align: center; border-right: .2mm solid #000; display: flex; flex-direction: column; justify-content: center; }
+.pg .hc:last-child, .pg .c:last-child { border-right: 0; }
+.pg .hc b { font-size: 6.6pt; line-height: 1.2; font-weight: 700; }
+.pg .hc i { font-size: 5.6pt; line-height: 1.15; font-style: normal; color: #555; margin-top: .4mm; }
+.pg .body { position: relative; overflow: hidden; }
+.pg .row { border-bottom: .2mm solid #000; position: relative; }
+.pg .row.fill { border-bottom: .15mm solid #9a9a9a; }
+.pg .c { padding: 1.1mm; border-right: .2mm solid #000; font-size: var(--fs, 7.4pt); line-height: 1.3; overflow: hidden; white-space: pre-line; overflow-wrap: anywhere; }
+.pg .c.n { text-align: right; font-variant-numeric: tabular-nums; }
+.pg .c.d b { font-weight: 700; }
+.pg .c .tag { display: block; font-size: 6.2pt; font-weight: 700; margin-top: .3mm; }
+.pg .c.s { font-size: calc(var(--fs, 7.4pt) * .92); }
+.pg .row.v .c { color: #707070; }
+.pg .row.v::after { content: ""; position: absolute; left: .5mm; right: .5mm; top: 50%; border-top: .3mm solid #333; }
+.pg .foot { position: absolute; left: 0; right: 0; bottom: 3.2mm; display: flex; justify-content: space-between; align-items: baseline; font-size: 8pt; font-weight: 700; }
+.pg.L .foot { padding: 0 13mm 0 7mm; } .pg.R .foot { padding: 0 7mm 0 13mm; flex-direction: row-reverse; } .pg.X .foot { padding: 0 10mm; flex-direction: row-reverse; }
+.pg .foot small { font-size: 5.6pt; font-weight: 400; color: #666; }
+.pg h3 { margin: 0 0 1mm; font-size: 10pt; }
+.pg .xsub { font-size: 7pt; color: #555; margin-bottom: 3mm; }
+.pg .xt .hrow .hc { text-align: left; }
+.sheet { width: 210mm; height: 297mm; display: flex; flex-direction: column; background: #fff; position: relative; }
+.sheet .cut { position: absolute; left: 4mm; right: 4mm; top: 148mm; border-top: .2mm dashed #999; }
+
+#measure { position: fixed; left: -3000mm; top: 0; visibility: hidden; pointer-events: none; }
+#print-root { display: none; }
+
+@media (max-width: 760px) {
+  .tw.wide { display: none; }
+  .cards { display: flex; }
+  .ident h1 { font-size: 18px; }
+  .fields { grid-template-columns: 1fr; }
+  .card dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .log-i { grid-template-columns: 1fr; }
+  .top .actions { width: 100%; }
+  dialog { width: 100vw; max-width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; margin: 0; }
+  .dlg { max-height: 100dvh; height: 100%; }
+  .dlg-b { flex: 1; }
+}
+@media (prefers-reduced-motion: no-preference) { .btn, .sp, .tab { transition: border-color .15s, background-color .15s; } }
+
+@media print {
+  html, body { background: #fff !important; }
+  body > *:not(#print-root) { display: none !important; }
+  #print-root { display: block !important; }
+  #print-root .pg, #print-root .sheet { break-after: page; page-break-after: always; box-shadow: none; }
+  #print-root > :last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ===== 2.0: вхід, ролі, сегментні поля WO/CRS, пропозиції ===== */
+.login-wrap { position: fixed; inset: 0; z-index: 40; background: var(--bg); display: grid; place-items: center; padding: 16px; }
+.login { width: min(400px, 100%); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.login h1 { margin: 0; font-size: 19px; line-height: 1.25; }
+.login .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.login .btn { justify-content: center; padding: 11px; font-size: 15px; }
+.seg { display: flex; align-items: flex-end; gap: 4px; flex-wrap: wrap; }
+.seg .fix { padding: 9px 8px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line-soft); font: 600 15px/1.2 ui-monospace, Consolas, monospace; color: var(--muted); }
+.seg .sep { font: 700 17px/1 ui-monospace, Consolas, monospace; padding: 0 1px 11px; color: var(--text); }
+.seg label.sg { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 10.5px; color: var(--faint); }
+.fld.err .seg input:not([readonly]) { border-color: var(--bad); }
+.seg input { width: 3.1em; padding: 9px 4px; text-align: center; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font: 600 15px/1.2 ui-monospace, Consolas, monospace; }
+.seg input.w3 { width: 3.8em; }
+.seg input[readonly] { background: var(--surface-2); color: var(--muted); }
+.seg .o { font: 700 15px/1 ui-monospace, Consolas, monospace; padding: 0 0 11px; }
+.segval { font: 600 13px/1.3 ui-monospace, Consolas, monospace; color: var(--muted); }
+.radios { display: flex; gap: 6px; flex-wrap: wrap; }
+.radios label { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; cursor: pointer; }
+.radios label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.radios input { margin: 0; }
+.prevhint { font-size: 12px; color: var(--faint); }
+.pgstat { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.sp .pgstat .chip { font-size: 10.5px; padding: 1px 7px; }
+.perm-list { display: grid; gap: 6px; }
+.perm-list label { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; }
+.perm-list input { margin-top: 3px; }
+.user-i { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 14px; padding: 12px 16px; border-bottom: 1px solid var(--line-soft); align-items: center; }
+.user-i:last-child { border-bottom: 0; }
+.user-i h3 { margin: 0; font-size: 14.5px; }
+.user-i .small code { font-size: 12.5px; }
+dialog.wide { width: min(1100px, calc(100vw - 24px)); }
+.draw-wrap { position: relative; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface-2); touch-action: none; }
+.draw-wrap { display: grid; place-items: center; }
+.draw-wrap canvas { display: block; max-width: 100%; max-height: 56vh; width: auto; height: auto; cursor: crosshair; }
+.draw-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.draw-tools .dot { width: 14px; height: 14px; border-radius: 50%; background: #e0201b; display: inline-block; }
+.sugg { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; padding: 14px 16px; border-bottom: 1px solid var(--line-soft); }
+.sugg:last-child { border-bottom: 0; }
+.sugg img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; cursor: zoom-in; background: #fff; }
+.sugg .txt { white-space: pre-line; font-size: 14px; }
+.sugg .meta { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+.btn.idea { border-color: color-mix(in srgb, #e0201b 45%, var(--line)); }
+.btn.idea svg { color: #e0201b; }
+.sheet-p { width: 210mm; min-height: 297mm; padding: 12mm; background: #fff; color: #000; font-family: var(--print); }
+.sheet-p h2 { margin: 0 0 2mm; font-size: 13pt; } .sheet-p .sm { font-size: 8pt; color: #555; margin-bottom: 5mm; }
+.sheet-p .it { break-inside: avoid; page-break-inside: avoid; border: .3mm solid #000; padding: 4mm; margin-bottom: 5mm; }
+.sheet-p .it img { width: 100%; max-height: 170mm; object-fit: contain; border: .2mm solid #999; }
+.sheet-p .it .t { font-size: 10pt; white-space: pre-line; margin-top: 3mm; } .sheet-p .it .m { font-size: 8pt; color: #333; margin-bottom: 2mm; }
+@media (max-width: 760px) {
+  .sugg { grid-template-columns: 1fr; }
+  .seg input { width: 2.8em; } .seg input.w3 { width: 3.4em; }
+}
+@media print { #print-root .sheet-p { break-after: page; page-break-after: always; } }
+
+.fld .segon { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text); margin-bottom: 4px; cursor: pointer; }
+.fld .segon input { width: auto; }
+</style>
+<style id="page-size">@page { size: 210mm 148mm; margin: 0; }</style>
+</head>
+<body>
+<div class="wrap" hidden="">
+  <header class="top">
+    <div class="ident">
+      <div class="spine-ico" aria-hidden="true">ФОРМ</div>
+      <div style="min-width:0">
+        <h1 id="h-title">Формуляр</h1>
+        <div class="sub" id="h-sub"></div>
+      </div>
+    </div>
+    <div class="actions">
+      <span class="who" id="who"></span>
+      <button class="btn idea" id="b-idea" type="button" title="Повідомити про проблему або запропонувати покращення"></button>
+      <button class="btn" id="b-save" type="button"></button>
+      <button class="btn" id="b-print" type="button"></button>
+      <button class="btn ghost" id="b-more" type="button" aria-haspopup="true" aria-label="Інші дії"></button>
+    </div>
+  </header>
+  <div class="rems" id="rems" aria-live="polite"></div>
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+  <main id="view"></main>
+</div>
+<button class="fab" id="fab" type="button" hidden=""></button>
+<dialog id="dlg"></dialog>
+<div id="measure" aria-hidden="true"></div>
+<div id="print-root"></div>
+<input type="file" id="file-in" accept=".html,.htm,.json,text/html,application/json" hidden="">
+
+<!-- ДАНІ ФОРМУЛЯРА. Програма перезаписує цей блок під час збереження файлу. -->
+<script type="application/json" id="fm-data">{"app":"formular","schema":4,"id":"as350-9253-53","createdAt":"2026-10-19T10:54:46Z","updatedAt":"2026-10-27T17:08:49.709Z","ident":{"title":"Формуляр повітряного судна","camo":"UA.MBG.0124","type":"AS350B3e","serial":"9165","reg":"55","startPage":2,"leaf":"spread"},"holders":[{"id":"h-kozoriz","name":"Козоріз","position":"Нач. CAMO"},{"id":"h-nedavnii","name":"Radchenko","position":"НТЛ 2 АЛ"},{"id":"r5a6brbe07u","name":"Ryskalenko","position":""},{"id":"fftviadgjsw","name":"Ordynskiy","position":"Ст. інженер ВД"},{"id":"uiun5kyik46","name":"Kalugin","position":"НТЛ 3 АЛ"},{"id":"yqdnsp3kpgo","name":"Artomenko","position":"Ст. ав. технік - б/о 2 АЛ"}],"auths":[{"id":"a-26camo-001","holder":"h-kozoriz","org":"CAMO","code":"26САМО-001","scope":"","from":"","to":"","active":true},{"id":"a-26oae-19","holder":"h-nedavnii","org":"AMO","code":"26ОАЕ-04","scope":"","from":"","to":"","active":true},{"id":"543qgniesyx","holder":"r5a6brbe07u","org":"CAMO","code":"26CAMO-011","scope":"","from":"","to":"","active":true},{"id":"t5iai8uf6xo","holder":"h-nedavnii","org":"CAMO","code":"26CAMO-005","scope":"","from":"","to":"","active":true},{"id":"7kj2syvfi8w","holder":"r5a6brbe07u","org":"AMO","code":"26ОАЕ-23","scope":"","from":"","to":"","active":true},{"id":"iz9myhzhe57","holder":"fftviadgjsw","org":"CAMO","code":"26CAMO-012","scope":"","from":"","to":"","active":true},{"id":"tk8kwpuhqiz","holder":"fftviadgjsw","org":"AMO","code":"26ОАЕ-03","scope":"","from":"","to":"","active":true},{"id":"5hbywedizsr","holder":"uiun5kyik46","org":"CAMO","code":"26CAMO-016","scope":"","from":"","to":"","active":true},{"id":"lt5e3vejqi7","holder":"uiun5kyik46","org":"AMO","code":"26ОАЕ-56","scope":"двигун не може CRSити","from":"","to":"","active":true},{"id":"4j5xlg5l1xp","holder":"yqdnsp3kpgo","org":"AMO","code":"26ОАЕ-48","scope":"","from":"","to":"","active":true}],"entries":[{"id":"3rzz0ishknm","seq":1,"date":"2026-10-13","fhMx":0,"fhTotal":45212,"fhMajor":null,"landings":852,"motive":"SAS26.AMP.AS350B3, Rev.2, issue 2.","work":"Performed P-Check according to chapter 1.1.2, items 1-2, 4-20","wo":"","crs":"","check":"№48 від 31.08.2026, журнал №38","camoAuth":"543qgniesyx","amoAuth":null,"rev":1,"printedRev":0,"page":2,"voided":true,"voidReason":"1","voidedAt":"2026-10-27T16:52:32.756Z","voidedBy":"CAM","createdBy":"Козоріз","createdAt":"2026-10-19T11:35:52.786Z","updatedAt":"2026-10-27T16:52:32.756Z","techLog":"","major":false,"man":{"fhMx":true},"crsType":"tech"},{"id":"qprh4niiwu2","seq":2,"date":"2026-10-13","fhMx":null,"fhTotal":45212,"fhMajor":null,"landings":852,"motive":"Acting Chief Aviation Engineer of SBGSU dated October 04.2026, №188/2026","work":"Performed inspecions of correct installation of clamps on gimbal joint bolts safety pins","wo":"9141261005-012/1","crs":"9141261013-23/1","check":"КА №52 ТБЖ №38","camoAuth":"543qgniesyx","amoAuth":null,"rev":1,"printedRev":0,"page":2,"voided":true,"voidReason":"1","voidedAt":"2026-10-27T16:52:38.390Z","voidedBy":"CAM","createdBy":"Козоріз","createdAt":"2026-10-19T11:36:55.226Z","updatedAt":"2026-10-27T16:52:38.390Z","techLog":"","major":false,"man":{},"crsType":"tech"}],"history":[{"id":"uhzg9w9cik3","ts":"2026-10-19T11:31:56.787Z","by":"Козоріз","kind":"ident","entry":null,"changes":{"serial":["9253","9157"],"reg":["53","56"]},"reason":"","rev":null},{"id":"bfqhhwhe07u","ts":"2026-10-19T11:33:06.330Z","by":"Козоріз","kind":"auth","entry":null,"changes":{"нова особа":["","26CAMO-011 Ryskalenko"]},"reason":"","rev":null},{"id":"jm9k0tce8ru","ts":"2026-10-19T11:33:17.418Z","by":"Козоріз","kind":"auth","entry":null,"changes":{"особа":["26CAMO-011 Ryskalenko","26CAMO-011 Ryskalenko"]},"reason":"","rev":null},{"id":"zhdqbageiei","ts":"2026-10-19T11:33:29.898Z","by":"Козоріз","kind":"auth","entry":null,"changes":{"особа":["26CAMO-011 Ryskalenko","Ryskalenko"]},"reason":"","rev":null},{"id":"1k295jkesyx","ts":"2026-10-19T11:33:43.593Z","by":"Козоріз","kind":"auth","entry":null,"changes":{"Ryskalenko":["","САМО 26CAMO-011"]},"reason":"","rev":null},{"id":"0x4cr17hknm","ts":"2026-10-19T11:35:52.786Z","by":"Козоріз","kind":"create","entry":"3rzz0ishknm","changes":{},"reason":"","rev":0},{"id":"j46ri1giwu2","ts":"2026-10-19T11:36:55.226Z","by":"Козоріз","kind":"create","entry":"qprh4niiwu2","changes":{},"reason":"","rev":0},{"id":"9nbtswqlauz","ts":"2026-10-19T11:38:46.715Z","by":"Козоріз","kind":"print","entry":null,"changes":{"розвороти":["","2–3"]},"reason":"","rev":null},{"id":"33gvbe8bmgk","ts":"2026-10-27T16:52:32.756Z","by":"CAM","kind":"void","entry":"3rzz0ishknm","changes":{"voided":[false,true]},"reason":"1","rev":1},{"id":"aq43hnobmgk","ts":"2026-10-27T16:52:32.756Z","by":"CAM","kind":"recalc","entry":"qprh4niiwu2","changes":{"fhMx":[0,null]},"reason":"Автоматичний перерахунок","rev":null},{"id":"3ev7w90bqt3","ts":"2026-10-27T16:52:38.391Z","by":"CAM","kind":"void","entry":"qprh4niiwu2","changes":{"voided":[false,true]},"reason":"1","rev":1},{"id":"ano8830c6uu","ts":"2026-10-27T16:52:59.190Z","by":"CAM","kind":"user","entry":null,"changes":{"CAM":["","змінено свій пароль"]},"reason":"","rev":null},{"id":"js4etbdcj4a","ts":"2026-10-27T16:53:15.082Z","by":"CAM","kind":"print","entry":null,"changes":{"сторінки":["","2, 3"]},"reason":"","rev":null},{"id":"8wlhzx0cj4a","ts":"2026-10-27T16:53:15.082Z","by":"CAM","kind":"pdf","entry":null,"changes":{"сторінки":["","2, 3"]},"reason":"","rev":null},{"id":"87kwfebdq4m","ts":"2026-10-27T16:54:10.822Z","by":"CAM","kind":"user","entry":null,"changes":{"CAM":["","змінено свій пароль"]},"reason":"","rev":null},{"id":"7prq0l9el6d","ts":"2026-10-27T16:54:51.061Z","by":"CAM","kind":"auth","entry":null,"changes":{"особа":["Недавній","Radchenko"]},"reason":"","rev":null},{"id":"2svnuepew54","ts":"2026-10-27T16:55:05.272Z","by":"CAM","kind":"auth","entry":null,"changes":{"Radchenko 26ОАЕ-04":["","{\"code\":[\"26ОАЕ-19\",\"26ОАЕ-04\"]}"]},"reason":"","rev":null},{"id":"okn2f87f6xo","ts":"2026-10-27T16:55:19.260Z","by":"CAM","kind":"auth","entry":null,"changes":{"Radchenko":["","САМО 26CAMO-005"]},"reason":"","rev":null},{"id":"dbnyoipfi8w","ts":"2026-10-27T16:55:33.920Z","by":"CAM","kind":"auth","entry":null,"changes":{"Ryskalenko":["","ТОР 26ОАЕ-23"]},"reason":"","rev":null},{"id":"tt8cgy3gjsw","ts":"2026-10-27T16:56:22.592Z","by":"CAM","kind":"auth","entry":null,"changes":{"нова особа":["","Ordynskiy"]},"reason":"","rev":null},{"id":"ufzuckkgz7g","ts":"2026-10-27T16:56:42.556Z","by":"CAM","kind":"auth","entry":null,"changes":{"особа":["Козоріз","Козоріз"]},"reason":"","rev":null},{"id":"4mbgmkihe57","ts":"2026-10-27T16:57:01.915Z","by":"CAM","kind":"auth","entry":null,"changes":{"Ordynskiy":["","САМО 26CAMO-012"]},"reason":"","rev":null},{"id":"0fkyuoxhqiz","ts":"2026-10-27T16:57:17.963Z","by":"CAM","kind":"auth","entry":null,"changes":{"Ordynskiy":["","ТОР 26ОАЕ-03"]},"reason":"","rev":null},{"id":"onyaaj6ik46","ts":"2026-10-27T16:57:56.310Z","by":"CAM","kind":"auth","entry":null,"changes":{"нова особа":["","Kalugin"]},"reason":"","rev":null},{"id":"j87hozlipb9","ts":"2026-10-27T16:58:03.045Z","by":"CAM","kind":"auth","entry":null,"changes":{"особа":["Radchenko","Radchenko"]},"reason":"","rev":null},{"id":"hp2hkxlizsr","ts":"2026-10-27T16:58:16.635Z","by":"CAM","kind":"auth","entry":null,"changes":{"Kalugin":["","САМО 26CAMO-016"]},"reason":"","rev":null},{"id":"etb8e3hjqi7","ts":"2026-10-27T16:58:51.247Z","by":"CAM","kind":"auth","entry":null,"changes":{"Kalugin":["","ТОР 26ОАЕ-56"]},"reason":"","rev":null},{"id":"hz0lc39kpgo","ts":"2026-10-27T16:59:36.552Z","by":"CAM","kind":"auth","entry":null,"changes":{"нова особа":["","Artomenko"]},"reason":"","rev":null},{"id":"hrba5dpl1xp","ts":"2026-10-27T16:59:52.717Z","by":"CAM","kind":"auth","entry":null,"changes":{"Artomenko":["","ТОР 26ОАЕ-48"]},"reason":"","rev":null},{"id":"5s8sah0mgiw","ts":"2026-10-27T17:00:58.280Z","by":"CAM","kind":"user","entry":null,"changes":{"evg":["","створено: Окремі повноваження"]},"reason":"","rev":null},{"id":"bs6ueelp89j","ts":"2026-10-27T17:03:07.543Z","by":"CAM","kind":"lib","entry":null,"changes":{"Що зроблено":["Performed P-Check according to chapter 1.1.2, items 1-2, 4-20","Performed P-Check 10FH//7D according to chapter 1.1.2, items 1-2, 4-20 of AMP"]},"reason":"","rev":null},{"id":"mrfx4sxpbnr","ts":"2026-10-27T17:03:11.943Z","by":"CAM","kind":"lib","entry":null,"changes":{"Що зроблено":["Inspection after 15 flight hours or 7 days acc. to ch. 1.1.2 item 3",""]},"reason":"","rev":null},{"id":"1leg4slpjlz","ts":"2026-10-27T17:03:22.247Z","by":"CAM","kind":"lib","entry":null,"changes":{"Підстава для ТО":["SAS26.AMP.AS350B3, Rev.2, issue 2.","SAS26.AMP.AS350B3, rev.2, issue 2."]},"reason":"","rev":null},{"id":"6qipya3wc52","ts":"2026-10-27T17:08:39.158Z","by":"Артьоменко Є.Ю.","kind":"ident","entry":null,"changes":{"serial":["9157","9165"],"reg":["56","55"]},"reason":"","rev":null},{"id":"zvy12mpwka5","ts":"2026-10-27T17:08:49.709Z","by":"Артьоменко Є.Ю.","kind":"print","entry":null,"changes":{"сторінки":["","2, 3"]},"reason":"","rev":null},{"id":"jofoqr0wka5","ts":"2026-10-27T17:08:49.709Z","by":"Артьоменко Є.Ю.","kind":"pdf","entry":null,"changes":{"сторінки":["","2, 3"]},"reason":"","rev":null}],"events":{"fileSavedAt":"2026-10-27T17:08:57.460Z","pdfAt":"2026-10-27T17:08:49.709Z","backupAt":"2026-10-27T16:53:17.866Z"},"settings":{"remindPrintDays":7,"remindPdfDays":7,"remindBackupDays":7},"users":[{"id":"zzrupffargk","login":"CAM","name":"CAM","role":"chief","perms":[],"active":true,"createdAt":"2026-10-27T16:51:52.580Z","salt":"b8gij9gc6ueqbymhgcc6ue","hash":"bff421bd470d66741dbfa8eef784e8486ea1a2f62330b962e449c1744367ac7c","pwAt":"2026-10-27T16:52:59.190Z"},{"id":"w8treiumgik","login":"evg","name":"Артьоменко Є.Ю.","role":"custom","perms":["entry","correct","year","settings","print","users","suggest"],"active":true,"createdAt":"2026-10-27T17:00:58.268Z","createdBy":"CAM","salt":"lsucmoimgiks7a6osmmgik","hash":"da88689e947b34bcf994196413afb98f8046c92633aaf71131414d9ad7bd1f16","pwAt":"2026-10-27T17:00:58.280Z"}],"sugg":[],"pages":{"2":{"pr":"14t21c3.1o","prAt":"2026-10-27T17:08:49.709Z","pdf":"14t21c3.1o","pdfAt":"2026-10-27T17:08:49.709Z"},"3":{"pr":"1kzqolk.1o","prAt":"2026-10-27T17:08:49.709Z","pdf":"1kzqolk.1o","pdfAt":"2026-10-27T17:08:49.709Z"}},"lib":{"motive":[{"id":"u1zyh64argk","text":"SAS26.AMP.AS350B3, rev.2, issue 2."}],"work":[{"id":"kt9kuezargk","text":"Performed P-Check 10FH//7D according to chapter 1.1.2, items 1-2, 4-20 of AMP"}]}}</script>
+
+<script>
+'use strict';
+/* =====================================================================
+   Електронний формуляр ПС — версія програми і журнал змін
+   ===================================================================== */
+const APP_VERSION = '2.1.0';
+const SCHEMA = 4;
+const CHANGELOG = [
+  ['2.1.0', '27.10.2026', 'WO і CRS у новому записі — необов\'язкові: за замовчуванням увімкнені, позначкою можна вимкнути.'],
+  ['2.0.0', '27.10.2026', 'Вхід за логіном і паролем, ролі й повноваження користувачів, гостьові облікові записи. Оператор вносить загальне напрацювання і кількість посадок — напрацювання з останнього ТО рахується як різниця. WO і CRS — за шаблоном з номером борта і датою; CRS: технік або льотчик. Перевірка зростання посадок, напрацювання і номера контрольного аркушу; обов\'язкові поля. Записи заднім числом з повним перерахунком. Сторінки без слідів виправлень; облік сторінок, які треба передрукувати (разом зі зворотними) і пересберегти в PDF. Кнопка «Пропозиція» зі скріншотом і позначками.'],
+  ['1.3.0', '27.10.2026', 'Автоматичний розрахунок напрацювання; позначка «Базове ТО»; довідник стандартних підстав для ТО і робіт.'],
+  ['1.2.0', '26.10.2026', 'Номер контрольного аркушу і номер ТБЖ — окремими полями.'],
+  ['1.1.0', '26.10.2026', 'Напрацювання — у два поля, години і хвилини (00–59).'],
+  ['1.0.0', '19.10.2026', 'Перша версія: розворот A5, повноваження САМО і ТОР, історія змін, друк і PDF, нагадування, дані всередині файлу.'],
+];
+const SOURCE = '<!doctype html>\n' + document.documentElement.outerHTML; // копія програми для збереження з даними
+
+/* ---------- дрібниці ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const nowIso = () => new Date().toISOString();
+const todayIso = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
+const fd = s => { if (!s) return ''; const [y, m, d] = String(s).slice(0, 10).split('-'); return `${d}.${m}.${y}`; };
+const fdt = s => s ? new Date(s).toLocaleString('uk-UA', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+const ageDays = iso => iso ? (Date.now() - Date.parse(iso)) / 864e5 : Infinity;
+const hm = min => min == null || min === '' ? '' : `${Math.floor(min / 60)}:${String(min % 60).padStart(2, '0')}`;
+function parseHours(v) {
+  v = String(v ?? '').trim();
+  if (!v) return null;
+  const m = v.match(/^(\d+):(\d{1,2})$/);
+  if (!m || +m[2] > 59) return NaN;
+  return +m[1] * 60 + +m[2];
+}
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); return true; } catch { return false; } },
+};
+const sess = {
+  get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* */ } },
+  del(k) { try { sessionStorage.removeItem(k); } catch { /* */ } },
+};
+const IC = {
+  save: 'M5 3h11l3 3v15H5zM8 3v6h8V3M8 21v-7h8v7',
+  print: 'M7 8V3h10v5M6 17H4v-7h16v7h-2M7 14h10v7H7z',
+  more: 'M12 5v.01M12 12v.01M12 19v.01',
+  plus: 'M12 5v14M5 12h14',
+  x: 'M6 6l12 12M18 6 6 18',
+  idea: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z',
+  out: 'M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10',
+};
+const ic = n => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IC[n]}"/></svg>`;
+function toast(msg) { const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3600); }
+const plural = (n, a, b, c) => { const m10 = n % 10, m100 = n % 100; return m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20) ? b : c; };
+function hashStr(s) { let h = 2166136261 >>> 0; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return h.toString(36) + '.' + s.length.toString(36); }
+
+/* SHA-256 (для паролів; працює без інтернету і без захищеного з'єднання) */
+function sha256(str) {
+  const b = new TextEncoder().encode(str), K = [], H = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225];
+  let n = 2, k = 0; const isP = x => { for (let i = 2; i * i <= x; i++) if (x % i === 0) return false; return true; };
+  while (k < 64) { if (isP(n)) K[k++] = (Math.cbrt(n) % 1) * 4294967296 >>> 0; n++; }
+  const l = b.length, words = new Uint32Array(((l + 9 + 63) >> 6) << 4);
+  for (let i = 0; i < l; i++) words[i >> 2] |= b[i] << (24 - (i % 4) * 8);
+  words[l >> 2] |= 0x80 << (24 - (l % 4) * 8); words[words.length - 1] = l * 8;
+  const w = new Uint32Array(64), r = (x, y) => (x >>> y) | (x << (32 - y));
+  for (let j = 0; j < words.length; j += 16) {
+    for (let i = 0; i < 64; i++) w[i] = i < 16 ? words[j + i] : (r(w[i - 2], 17) ^ r(w[i - 2], 19) ^ (w[i - 2] >>> 10)) + w[i - 7] + (r(w[i - 15], 7) ^ r(w[i - 15], 18) ^ (w[i - 15] >>> 3)) + w[i - 16] | 0;
+    let [a, bb, c, d, e, f, g, h] = H;
+    for (let i = 0; i < 64; i++) {
+      const t1 = h + (r(e, 6) ^ r(e, 11) ^ r(e, 25)) + ((e & f) ^ (~e & g)) + K[i] + w[i] | 0, t2 = (r(a, 2) ^ r(a, 13) ^ r(a, 22)) + ((a & bb) ^ (a & c) ^ (bb & c)) | 0;
+      h = g; g = f; f = e; e = d + t1 | 0; d = c; c = bb; bb = a; a = t1 + t2 | 0;
+    }
+    H[0] = H[0] + a | 0; H[1] = H[1] + bb | 0; H[2] = H[2] + c | 0; H[3] = H[3] + d | 0; H[4] = H[4] + e | 0; H[5] = H[5] + f | 0; H[6] = H[6] + g | 0; H[7] = H[7] + h | 0;
+  }
+  return H.map(x => (x >>> 0).toString(16).padStart(8, '0')).join('');
+}
+function pwHash(salt, pw) { let h = salt + '|' + pw; for (let i = 0; i < 500; i++) h = sha256(salt + h); return h; }
+function setPassword(u, pw) { u.salt = uid() + uid(); u.hash = pwHash(u.salt, pw); u.pwAt = nowIso(); }
+
+/* =====================================================================
+   Ролі й повноваження користувачів програми
+   ===================================================================== */
+const PERMS = [
+  ['entry', 'Вносити нові записи'],
+  ['correct', 'Уточнювати й анулювати записи, вносити записи заднім числом, ручне коригування напрацювання'],
+  ['year', 'Змінювати рік у WO і CRS'],
+  ['settings', 'Змінювати реквізити формуляра, повноваження осіб, стандартні роботи'],
+  ['print', 'Друкувати, зберігати PDF, позначати сторінки роздрукованими'],
+  ['users', 'Додавати користувачів і наділяти їх ролями'],
+  ['suggest', 'Вивантажувати пропозиції у PDF і позначати їх розглянутими'],
+];
+const ALLP = PERMS.map(p => p[0]);
+const ROLES = {
+  chief: { name: 'Головний адміністратор', perms: ALLP },
+  admin: { name: 'Адміністратор', perms: ALLP },
+  operator: { name: 'Оператор', perms: ['entry', 'print'] },
+  guest: { name: 'Гість — лише перегляд', perms: [] },
+  custom: { name: 'Окремі повноваження', perms: null },
+};
+let CU = null;              // поточний користувач
+const permsOf = u => !u ? [] : u.role === 'custom' ? (u.perms || []) : ROLES[u.role]?.perms || [];
+const can = p => !!CU && CU.active !== false && (CU.role === 'chief' || permsOf(CU).includes(p));
+const isGuest = () => CU?.role === 'guest';
+const userName = () => CU ? CU.name || CU.login : '';
+
+/* =====================================================================
+   Дані
+   ===================================================================== */
+const ORG = { CAMO: 'САМО', AMO: 'ТОР' };
+const ORG_FULL = { CAMO: 'Організація з управління підтриманням льотної придатності (САМО)', AMO: 'Організація з технічного обслуговування та ремонту' };
+const LIB_SEED = {
+  motive: ['SAS26.AMP.AS350B3, Rev.2, issue 2.'],
+  work: ['Performed P-Check according to chapter 1.1.2, items 1-2, 4-20', 'Inspection after 15 flight hours or 7 days acc. to ch. 1.1.2 item 3'],
+};
+function chiefUser() { const u = { id: uid(), login: 'CAM', name: 'CAM', role: 'chief', perms: [], active: true, createdAt: nowIso(), defaultPw: true }; setPassword(u, '1467'); return u; }
+function blank() {
+  const k = uid(), n = uid();
+  return {
+    app: 'formular', schema: SCHEMA, id: uid(), createdAt: nowIso(), updatedAt: nowIso(),
+    ident: { title: 'Формуляр повітряного судна', camo: 'UA.MBG.0124', type: 'AS350B3e', serial: '9157', reg: '56', startPage: 2, leaf: 'spread' },
+    holders: [{ id: k, name: 'Козоріз', position: '' }, { id: n, name: 'Недавній', position: '' }],
+    auths: [{ id: uid(), holder: k, org: 'CAMO', code: '26САМО-001', scope: '', from: '', to: '', active: true },
+            { id: uid(), holder: n, org: 'AMO', code: '26ОАЕ-19', scope: '', from: '', to: '', active: true }],
+    entries: [], history: [], lib: { motive: [], work: [] }, users: [chiefUser()], pages: {}, sugg: [],
+    events: { fileSavedAt: null, pdfAt: null, backupAt: null },
+    settings: { remindPrintDays: 7, remindPdfDays: 7, remindBackupDays: 7 },
+  };
+}
+/* Перенесення даних зі старіших версій файлу. Кожна нова версія схеми додає крок — дані не губляться. */
+function migrate(d) {
+  if (!d || d.app !== 'formular') throw new Error('Це не файл електронного формуляра ПС');
+  if ((d.schema || 1) > SCHEMA) throw new Error('Файл створено новішою версією програми. Відкрийте його в новішій версії формуляра.');
+  const b = blank(), from = d.schema || 1;
+  d.ident = { ...b.ident, ...d.ident };
+  d.settings = { ...b.settings, ...d.settings };
+  d.events = { ...b.events, ...d.events };
+  for (const k of ['holders', 'auths', 'entries', 'history', 'users', 'sugg']) d[k] = Array.isArray(d[k]) ? d[k] : [];
+  if (!d.pages || typeof d.pages !== 'object') d.pages = {};
+  for (const e of d.entries) {
+    if (e.check == null) e.check = ''; if (e.techLog == null) e.techLog = '';            // схема 2
+    if (from < 3) e.major = false;                                                      // схема 3
+    e.major = !!e.major; e.man = e.man || {}; if (!e.crsType) e.crsType = /\/o\//.test(e.crs || '') ? 'pilot' : 'tech';
+    if (e.landings != null && e.landings !== '') e.landings = +e.landings;
+  }
+  if (!d.lib || !Array.isArray(d.lib.motive) || !Array.isArray(d.lib.work)) {
+    d.lib = { motive: [], work: [] };
+    for (const k of ['motive', 'work']) for (const t of LIB_SEED[k]) d.lib[k].push({ id: uid(), text: t });
+  }
+  if (from < 4) {                                                                       // схема 4: напрацювання з останнього ТО — різниця загальних
+    const list = d.entries.filter(x => !x.voided).sort((a, b2) => a.date < b2.date ? -1 : a.date > b2.date ? 1 : a.seq - b2.seq);
+    let prev = null;
+    for (const x of list) {
+      const mx = prev && prev.fhTotal != null && x.fhTotal != null ? x.fhTotal - prev.fhTotal : null;
+      if (mx == null ? x.fhMx != null : mx !== x.fhMx) x.man.fhMx = true;              // записане вручну значення зберігається
+      const base = prev ? (prev.major ? 0 : prev.fhMajor) : null, mj = base != null && x.fhMx != null ? base + x.fhMx : null;
+      if (x.fhMajor != null && mj !== x.fhMajor) x.man.fhMajor = true;
+      prev = x;
+    }
+    d._printedLegacy = d.entries.filter(e => e.page != null && e.printedRev === e.rev).map(e => e.id);
+  }
+  if (!d.users.some(u => u.role === 'chief')) d.users.unshift(chiefUser());
+  d.schema = SCHEMA;
+  return d;
+}
+let D;
+let dirty = false;        // є зміни, не збережені у файл
+let fileHandle = null;    // файл, відкритий з диска (Chrome/Edge на ПК) — для збереження «на місці»
+const SKEY = () => 'formular.session.' + D.id;
+
+function autosave() { store.set('formular.autosave.' + D.id, JSON.stringify({ at: nowIso(), data: D })); }
+function changed(render = true) {
+  D.updatedAt = nowIso(); dirty = true; autosave();
+  if (render) renderAll();
+}
+function logH(kind, entryId, changes = {}, reason = '', rev = null) {
+  D.history.push({ id: uid(), ts: nowIso(), by: userName(), kind, entry: entryId, changes, reason, rev });
+}
+const holderOf = a => D.holders.find(h => h.id === a?.holder);
+const authById = id => D.auths.find(a => a.id === id);
+const authLabel = id => { const a = authById(id); return a ? `${ORG[a.org]} ${holderOf(a)?.name || '?'} ${a.code}` : ''; };
+
+/* =====================================================================
+   Записи формуляра
+   ===================================================================== */
+const F = {
+  date: 'Дата', fhMx: 'Напрацювання з останнього ТО', fhTotal: 'Напрацювання загальне', fhMajor: 'Напрацювання після базового ТО',
+  landings: 'Кількість посадок', motive: 'Підстава для ТО', work: 'Що зроблено', wo: 'WO', crs: 'CRS', crsType: 'CRS видав', check: '№ контрольного аркушу', techLog: '№ ТБЖ',
+  camoAuth: 'Повноваження САМО', amoAuth: 'Повноваження ТОР', voided: 'Анулювання', major: 'Базове ТО',
+};
+const HOURS = ['fhMx', 'fhTotal', 'fhMajor'];
+const EDITABLE = ['date', 'fhTotal', 'landings', 'major', 'fhMx', 'fhMajor', 'motive', 'work', 'wo', 'crs', 'crsType', 'check', 'techLog', 'camoAuth', 'amoAuth'];
+const fmtVal = (k, v) => k === 'major' ? (v ? 'так' : 'ні') : k === 'crsType' ? (v === 'pilot' ? 'льотчик' : 'технік') : v == null || v === '' ? '—'
+  : HOURS.includes(k) ? hm(v) : k === 'date' ? fd(v) : k.endsWith('Auth') ? authLabel(v) || '—' : k === 'voided' ? (v ? 'анульовано' : '—') : String(v);
+const cmpE = (a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : a.seq - b.seq;
+const chron = () => D.entries.filter(x => !x.voided).sort(cmpE);
+/* Сусіди за датою для запису (новий запис — seq = нескінченність, тобто після всіх записів того ж дня) */
+function neighbours(date, e) {
+  const me = { date, seq: e ? e.seq : Infinity };
+  const list = chron().filter(x => x !== e);
+  const before = list.filter(x => cmpE(x, me) < 0), after = list.filter(x => cmpE(x, me) > 0);
+  return { prev: before[before.length - 1] || null, next: after[0] || null };
+}
+/* Розрахунок: з останнього ТО = загальне − загальне попереднього; після базового ТО — накопичення (після запису з «Базове ТО» — з нуля) */
+function derive(prev, fhTotal, major, man = {}, manVals = {}) {
+  const fhMx = man.fhMx ? manVals.fhMx : prev && prev.fhTotal != null && fhTotal != null ? fhTotal - prev.fhTotal : null;
+  const base = prev ? (prev.major ? 0 : prev.fhMajor) : null;
+  const fhMajor = man.fhMajor ? manVals.fhMajor : base != null && fhMx != null ? base + fhMx : null;
+  return { fhMx, fhMajor, base };
+}
+function recalcAll() {
+  const out = [];
+  let prev = null;
+  for (const x of chron()) {
+    const r = derive(prev, x.fhTotal, x.major, x.man, x);
+    const ch = {};
+    if (r.fhMx !== x.fhMx) ch.fhMx = [x.fhMx, r.fhMx];
+    if (r.fhMajor !== x.fhMajor) ch.fhMajor = [x.fhMajor, r.fhMajor];
+    if (Object.keys(ch).length) { Object.assign(x, { fhMx: r.fhMx, fhMajor: r.fhMajor, updatedAt: nowIso() }); logH('recalc', x.id, ch, 'Автоматичний перерахунок'); out.push(x); }
+    prev = x;
+  }
+  return out;
+}
+function addEntry(v) {
+  const seq = D.entries.reduce((m, e) => Math.max(m, e.seq), 0) + 1;
+  const e = { id: uid(), seq, ...v, rev: 0, voided: false, voidReason: '', voidedAt: null, voidedBy: '', createdBy: userName(), createdAt: nowIso(), updatedAt: nowIso() };
+  D.entries.push(e);
+  logH('create', e.id, {}, '', 0);
+  const rc = recalcAll();
+  changed();
+  return { e, rc };
+}
+function editEntry(e, v, reason) {
+  const ch = {};
+  for (const k of EDITABLE) if (JSON.stringify(e[k] ?? null) !== JSON.stringify(v[k] ?? null)) ch[k] = [e[k] ?? null, v[k] ?? null];
+  if (JSON.stringify(e.man || {}) !== JSON.stringify(v.man || {})) ch.man = [JSON.stringify(e.man || {}), JSON.stringify(v.man || {})];
+  if (!Object.keys(ch).length) return null;
+  Object.assign(e, v, { updatedAt: nowIso() });
+  e.rev += 1;
+  logH('change', e.id, ch, reason, e.rev);
+  const rc = recalcAll();
+  changed();
+  return { rc };
+}
+function voidEntry(e, reason) {
+  e.voided = true; e.voidReason = reason; e.voidedAt = nowIso(); e.voidedBy = userName(); e.rev += 1; e.updatedAt = nowIso();
+  logH('void', e.id, { voided: [false, true] }, reason, e.rev);
+  recalcAll();
+  changed();
+}
+
+/* ---------- WO і CRS ---------- */
+const boardNo = () => String(D.ident.serial || '').replace(/\D/g, '').padStart(4, '0').slice(-4);
+const curYY = () => String(new Date().getFullYear()).slice(-2);
+const daysIn = (yy, mm) => new Date(2000 + +yy, +mm, 0).getDate();
+const RX = {
+  wo: /^(\d{4})(\d{2})(\d{2})(\d{2})-(\d{3})\/(\d{1,2})$/,
+  tech: /^(\d{4})(\d{2})(\d{2})(\d{2})-(\d{2})\/(\d{1,2})$/,
+  pilot: /^(\d{4})(\d{2})(\d{2})(\d{2})-(\d{2})\/o\/(\d{1,2})$/,
+};
+function parseCode(kind, s) {
+  const m = String(s || '').match(RX[kind]);
+  return m ? { yy: m[2], mm: m[3], dd: m[4], n: m[5], s: m[6] } : null;
+}
+function buildCode(kind, p) { return `${boardNo()}${p.yy}${p.mm}${p.dd}-${p.n}${kind === 'pilot' ? '/o/' : '/'}${p.s}`; }
+function checkCode(kind, p) {
+  const e = [];
+  if (!/^\d{2}$/.test(p.yy)) e.push('рік — дві цифри');
+  if (!/^\d{2}$/.test(p.mm) || +p.mm < 1 || +p.mm > 12) e.push('місяць 01–12');
+  else if (!/^\d{2}$/.test(p.dd) || +p.dd < 1 || +p.dd > daysIn(p.yy || curYY(), p.mm)) e.push(`день 01–${daysIn(p.yy || curYY(), p.mm)}`);
+  if (kind === 'wo' && !/^\d{3}$/.test(p.n)) e.push('номер після дефіса — три цифри');
+  if (kind !== 'wo' && (!/^\d{2}$/.test(p.n) || +p.n < 1)) e.push('номер після дефіса — 01–99');
+  const lo = kind === 'pilot' ? 0 : 1;
+  if (!/^\d{1,2}$/.test(p.s) || +p.s < lo || +p.s > 99) e.push(`число після дробу — ${lo}–99`);
+  return e;
+}
+
+/* ---------- довідник стандартних текстів ---------- */
+const LIB_NAME = { motive: 'Підстава для ТО', work: 'Що зроблено' };
+const EN_RE = /^[A-Za-z0-9\s.,;:!?'"()[\]\/\\\-–—+&%#№*=_°<>@]+$/;
+function splitStd(kind, text) {
+  text = String(text || '');
+  const items = [...D.lib[kind]].sort((a, b) => b.text.length - a.text.length);
+  for (const it of items) {
+    if (text === it.text) return { std: it.id, own: '', mode: 'std' };
+    if (text.startsWith(it.text + '\n')) return { std: it.id, own: text.slice(it.text.length + 1), mode: 'both' };
+  }
+  return { std: '', own: text, mode: 'own' };
+}
+const libShort = t => { const l = String(t).split('\n')[0]; return l.length > 90 ? l.slice(0, 88) + '…' : l; };
+function libAdd(kind, text) {
+  text = String(text || '').trim();
+  if (!text || !EN_RE.test(text) || D.lib[kind].some(x => x.text === text)) return false;
+  D.lib[kind].push({ id: uid(), text });
+  logH('lib', null, { [LIB_NAME[kind]]: ['', libShort(text)] });
+  return true;
+}
+
+/* =====================================================================
+   Розмітка сторінок: розворот A5 альбомна, ліва + права
+   ===================================================================== */
+const PW = 210, PH = 148, TOP = 7, BOT = 8, OUT = 7, INN = 13, BAND = 7.5, FOOT = 6, MIN_ROW = 8.5;
+const CW = PW - OUT - INN; // 190 мм
+const LEFT = [['date', 'Дата', 'Dates', 19], ['fhMx', 'Напрацювання з останнього ТО', 'Duration of flight since last maintenance operation', 29],
+  ['fhTotal', 'Напрацювання загальне', 'Hours since manufacture', 27], ['fhMajor', 'Напрацювання після базового ТО (аналог)', 'Hours since major maintenance', 29],
+  ['landings', 'Кількість посадок', 'Number of landings', 22], ['motive', 'Підстава для ТО', 'Maintenance motive', 0]];
+const RIGHT = [['work', 'Що зроблено', 'Work performed', 72], ['wo', 'WO', 'Work order', 20], ['crs', 'CRS', 'Certificate of release to service', 21],
+  ['check', 'Номер контрольного аркушу і номер ТБЖ', 'Check sheet No. / Tech log No.', 30], ['sign', 'Підпис', 'Signature, authorisation', 0]];
+for (const cols of [LEFT, RIGHT]) { const fixed = cols.reduce((s, c) => s + c[3], 0); cols.forEach(c => { if (!c[3]) c[3] = CW - fixed; }); }
+const colTpl = cols => cols.map(c => c[3] + 'mm').join(' ');
+
+function sigText(e) {
+  const ca = authById(e.camoAuth), aa = authById(e.amoAuth);
+  if (ca && aa && ca.holder === aa.holder) return `${esc(holderOf(ca)?.name)}\nСАМО ${esc(ca.code)}\nТОР ${esc(aa.code)}`;
+  return [ca ? `САМО ${esc(holderOf(ca)?.name)} ${esc(ca.code)}` : '', aa ? `ТОР ${esc(holderOf(aa)?.name)} ${esc(aa.code)}` : ''].filter(Boolean).join('\n');
+}
+const checkText = e => [esc(e.check), e.techLog ? 'ТБЖ ' + esc(e.techLog) : ''].filter(Boolean).join('\n');
+/* На папері — лише чинні дані, без позначок змін і анулювань */
+function cellsL(e) {
+  return [`<div class="c d"><b>${fd(e.date)}</b></div>`, ...['fhMx', 'fhTotal', 'fhMajor'].map(k => `<div class="c n">${hm(e[k])}</div>`),
+    `<div class="c n">${e.landings ?? ''}</div>`, `<div class="c">${esc(e.motive)}</div>`].join('');
+}
+function cellsR(e) {
+  return [`<div class="c">${esc(e.work)}</div>`, `<div class="c">${esc(e.wo)}</div>`, `<div class="c">${esc(e.crs)}</div>`, `<div class="c">${checkText(e)}</div>`, `<div class="c s">${sigText(e)}</div>`].join('');
+}
+const headCells = cols => cols.map(([, ua, en]) => `<div class="hc"><b>${esc(ua)}</b><i>(${esc(en)})</i></div>`).join('');
+
+let pxPerMm = 3.78;
+function measureSetup() {
+  const m = $('#measure');
+  m.innerHTML = `<div style="width:100mm;height:1px" id="mm100"></div>
+    <div class="pg L" style="height:auto;padding:0;width:${CW}mm" id="mL"></div><div class="pg R" style="height:auto;padding:0;width:${CW}mm" id="mR"></div>`;
+  pxPerMm = $('#mm100').getBoundingClientRect().width / 100 || 3.78;
+}
+function measureHeader() {
+  $('#mL').innerHTML = `<div class="hrow" style="grid-template-columns:${colTpl(LEFT)}">${headCells(LEFT)}</div>`;
+  $('#mR').innerHTML = `<div class="hrow" style="grid-template-columns:${colTpl(RIGHT)}">${headCells(RIGHT)}</div>`;
+  return Math.max($('#mL').firstChild.getBoundingClientRect().height, $('#mR').firstChild.getBoundingClientRect().height) / pxPerMm;
+}
+function measureEntries(list, fs = 7.4) {
+  const L = $('#mL'), R = $('#mR');
+  L.style.setProperty('--fs', fs + 'pt'); R.style.setProperty('--fs', fs + 'pt');
+  L.innerHTML = list.map(e => `<div class="row" style="grid-template-columns:${colTpl(LEFT)}">${cellsL(e)}</div>`).join('');
+  R.innerHTML = list.map(e => `<div class="row" style="grid-template-columns:${colTpl(RIGHT)}">${cellsR(e)}</div>`).join('');
+  const lh = $$('.row', L).map(r => r.getBoundingClientRect().height / pxPerMm);
+  const rh = $$('.row', R).map(r => r.getBoundingClientRect().height / pxPerMm);
+  return list.map((e, i) => Math.max(MIN_ROW, lh[i], rh[i]));
+}
+/* Записи (без анульованих) розкладаються за датою; для кожної сторінки — «відбиток» вмісту, щоб знати, що на папері застаріло */
+function layout() {
+  measureSetup();
+  const hh = measureHeader();
+  const body = PH - TOP - BAND - hh - FOOT - BOT;
+  const es = chron();
+  const hs = measureEntries(es);
+  const sp0 = D.ident.startPage;
+  const spreads = [], warnings = [];
+  const spread = i => { while (spreads.length <= i) { const n = spreads.length; spreads.push({ left: sp0 + 2 * n, right: sp0 + 2 * n + 1, rows: [], used: 0, fs: 7.4 }); } return spreads[i]; };
+  let i = 0;
+  es.forEach((e, k) => {
+    let h = hs[k];
+    if (h > body) { warnings.push(`Запис від ${fd(e.date)} задовгий для однієї сторінки — на папері текст обрізано, повний текст у файлі.`); h = body; }
+    while (spread(i).used > 0 && spread(i).used + h > body + .01) i++;
+    const s = spread(i); s.rows.push({ e, h }); s.used += h;
+  });
+  if (!spreads.length) spread(0);
+  const maxPrinted = Math.max(0, ...Object.keys(D.pages).map(Number).filter(n => D.pages[n]?.pr));   // сторінки, що стали порожніми, теж мають бути передруковані
+  while (spreads[spreads.length - 1].right < maxPrinted) spread(spreads.length);
+  const id = D.ident;
+  const head = [id.title, id.camo, id.type, id.serial, id.reg].join('|');
+  const pages = [], pageOf = {};
+  for (const s of spreads) {
+    const l = s.rows.map(r => cellsL(r.e)).join('§'), r = s.rows.map(x => cellsR(x.e)).join('§');
+    s.sigL = hashStr(`L|${s.left}|${head}|${l}`); s.sigR = hashStr(`R|${s.right}|${head}|${r}`);
+    pages.push({ no: s.left, s, side: 'L', sig: s.sigL, has: s.rows.length > 0 }, { no: s.right, s, side: 'R', sig: s.sigR, has: s.rows.length > 0 });
+    s.rows.forEach(x => { pageOf[x.e.id] = s.left; });
+  }
+  $('#measure').innerHTML = '';
+  return { spreads, hh, body, warnings, pages, pageOf };
+}
+/* Стан сторінок: потрібен друк / друк зворотної / PDF */
+const reverseOf = no => D.ident.leaf === 'spread' ? (no % 2 === D.ident.startPage % 2 ? no + 1 : no - 1) : (no % 2 ? no + 1 : no - 1);
+function pageState(L) {
+  const st = {};
+  for (const p of L.pages) {
+    const rec = D.pages[p.no] || {};
+    const relevant = p.has || rec.pr || rec.pdf;
+    st[p.no] = { print: relevant && rec.pr !== p.sig, pdf: relevant && rec.pdf !== p.sig, reverse: false, printed: !!rec.pr && rec.pr === p.sig };
+  }
+  for (const p of L.pages) if (st[p.no].print) { const r = reverseOf(p.no); if (st[r] && !st[r].print) st[r].reverse = true; else if (!st[r]) st[p.no].revOut = r; }
+  return st;
+}
+const needPrintList = (L, S) => L.pages.filter(p => S[p.no].print || S[p.no].reverse).map(p => p.no);
+
+function pageHtml(L, s, side) {
+  const id = D.ident;
+  const left = side === 'L';
+  const cols = left ? LEFT : RIGHT;
+  const no = left ? s.left : s.right;
+  const a = `<b>${esc(id.title)}</b> · САМО <b>${esc(id.camo)}</b>`, b = `<b>${esc(id.type)}</b>&nbsp;&nbsp; зав. № <b>${esc(id.serial)}</b>&nbsp;&nbsp; борт. № <b>${esc(id.reg)}</b>`;
+  const rows = s.rows.map(r => `<div class="row" style="height:${r.h.toFixed(2)}mm;grid-template-columns:${colTpl(cols)}">${left ? cellsL(r.e) : cellsR(r.e)}</div>`).join('');
+  let fill = '', y = s.used;
+  while (y + MIN_ROW <= L.body + .01) { fill += `<div class="row fill" style="height:${MIN_ROW}mm;grid-template-columns:${colTpl(cols)}">${cols.map(() => '<div class="c"></div>').join('')}</div>`; y += MIN_ROW; }
+  return `<div class="pg ${side}" style="--fs:${s.fs}pt"><div class="band"><span>${left ? a : b}</span><span>${left ? b : a}</span></div>
+    <div class="tbl"><div class="hrow" style="grid-template-columns:${colTpl(cols)};height:${L.hh.toFixed(2)}mm">${headCells(cols)}</div>
+    <div class="body" style="height:${L.body.toFixed(2)}mm">${rows}${fill}</div></div>
+    <div class="foot"><span>Сторінка ${no}</span><small>Сформовано ${fdt(nowIso())} · електронний формуляр ${APP_VERSION}</small></div></div>`;
+}
+const pageByNo = (L, no) => L.pages.find(p => p.no === no);
+
+/* Службові сторінки: реєстр змін і відомості про повноваження */
+function annexPages(L) {
+  const byId = Object.fromEntries(D.entries.map(e => [e.id, e]));
+  const chg = D.history.filter(h => h.kind === 'change' || h.kind === 'void').map(h => {
+    const e = byId[h.entry];
+    const what = Object.entries(h.changes).filter(([k]) => k !== 'man').map(([k, [a, b]]) => k === 'voided' ? 'Запис анульовано' : `${F[k] || k}: ${fmtVal(k, a)} → ${fmtVal(k, b)}`).join('\n');
+    return [`Зм. ${h.rev}`, L.pageOf[h.entry] ?? '', e ? fd(e.date) : '', what, h.reason, `${h.by}\n${fdt(h.ts)}`];
+  });
+  const used = new Set(D.entries.flatMap(e => [e.camoAuth, e.amoAuth]).filter(Boolean));
+  const au = D.auths.filter(a => used.has(a.id) || a.active).map(a => [holderOf(a)?.name || '', ORG_FULL[a.org], a.code, a.scope,
+    `${a.from ? fd(a.from) : '—'} — ${a.to ? fd(a.to) : 'безстроково'}`, used.has(a.id) ? 'так' : '']);
+  return [...tablePages('Реєстр змін записів формуляра', 'Кожна офіційна зміна чи анулювання запису: було → стало, причина, хто і коли вніс',
+    [['№ зміни', 15], ['Стор.', 11], ['Запис від', 18], ['Що змінено (було → стало)', 70], ['Причина', 38], ['Вніс, дата', 38]], chg),
+  ...tablePages('Відомості про повноваження осіб', 'Повноваження САМО і організації з технічного обслуговування та ремонту, що застосовуються у формулярі',
+    [['Прізвище', 28], ['Організація', 56], ['Повноваження', 26], ['Обсяг', 36], ['Чинне', 32], ['У записах', 12]], au)];
+}
+function tablePages(title, sub, cols, rows) {
+  const tpl = cols.map(c => c[1] + 'mm').join(' ');
+  const rowHtml = (r, h) => `<div class="row" style="${h ? `height:${h.toFixed(2)}mm;` : ''}grid-template-columns:${tpl}">${r.map(v => `<div class="c">${esc(v)}</div>`).join('')}</div>`;
+  measureSetup();
+  const m = $('#mL'); m.style.width = '190mm'; m.style.setProperty('--fs', '7pt');
+  m.innerHTML = rows.map(r => rowHtml(r)).join('');
+  const hs = $$('.row', m).map(x => Math.max(6, x.getBoundingClientRect().height / pxPerMm));
+  $('#measure').innerHTML = '';
+  const avail = PH - 9 - 14 - 6 - 6 - 8;
+  const pages = []; let cur = [], used = 0;
+  rows.forEach((r, i) => { if (used + hs[i] > avail && cur.length) { pages.push(cur); cur = []; used = 0; } cur.push([r, hs[i]]); used += hs[i]; });
+  pages.push(cur);
+  const id = D.ident;
+  return pages.map((p, n) => `<div class="pg X" style="--fs:7pt"><div class="band"><span><b>${esc(title)}</b>${pages.length > 1 ? ` (${n + 1}/${pages.length})` : ''}</span>
+    <span>${esc(id.type)} зав. № ${esc(id.serial)} борт. № ${esc(id.reg)} · САМО ${esc(id.camo)}</span></div><div class="xsub">${esc(sub)}</div>
+    <div class="tbl xt"><div class="hrow" style="grid-template-columns:${tpl}">${cols.map(c => `<div class="hc"><b>${esc(c[0])}</b></div>`).join('')}</div>
+    ${p.length ? p.map(([r, h]) => rowHtml(r, h)).join('') : '<div class="row" style="grid-template-columns:1fr"><div class="c">Записів немає</div></div>'}</div>
+    <div class="foot"><span></span><small>Сформовано ${fdt(nowIso())} · електронний формуляр ${APP_VERSION}</small></div></div>`);
+}
+
+/* =====================================================================
+   Нагадування
+   ===================================================================== */
+function reminders() {
+  const out = [];
+  const st = D.settings, ev = D.events;
+  if (isGuest()) return out;
+  if (CU?.defaultPw) out.push({ kind: 'pw', level: 'bad', text: 'Ви увійшли зі стандартним паролем. Змініть його в розділі «Адміністрування».' });
+  if (dirty) out.push({ kind: 'save', level: ageDays(ev.fileSavedAt || D.createdAt) > 1 ? 'bad' : 'warn',
+    text: `Є зміни, не збережені у файл${ev.fileSavedAt ? ` (останнє збереження ${fdt(ev.fileSavedAt)})` : ''}. Без збереження вони лишаються лише в цьому браузері.` });
+  const S = PS, need = needPrintList(LAY, S);
+  if (need.length) {
+    const rev = LAY.pages.filter(p => S[p.no].reverse).map(p => p.no);
+    out.push({ kind: 'print', level: 'warn', text: `Потрібно роздрукувати сторінки: ${need.join(', ')}${rev.length ? ` (зворотні сторінки без змін: ${rev.join(', ')})` : ''}.` });
+  }
+  const pdf = LAY.pages.filter(p => S[p.no].pdf).map(p => p.no);
+  if (pdf.length && D.entries.length) out.push({ kind: 'pdf', level: ageDays(D.updatedAt) >= st.remindPdfDays ? 'bad' : 'warn',
+    text: `Потрібно (знову) зберегти в PDF сторінки: ${pdf.join(', ')}${ev.pdfAt ? ` · останній PDF ${fd(ev.pdfAt)}` : ''}.` });
+  const since = ev.backupAt || D.entries.reduce((m, e) => e.createdAt < m ? e.createdAt : m, D.updatedAt);
+  if (D.entries.length && (!ev.backupAt || ev.backupAt < D.updatedAt) && (!ev.backupAt || ageDays(ev.backupAt) >= st.remindBackupDays)) out.push({ kind: 'backup', level: ageDays(since) >= st.remindBackupDays ? 'bad' : 'warn',
+    text: `Резервну копію ${ev.backupAt ? `робили ${fd(ev.backupAt)}` : 'ще не робили'}. Збережіть копію файлу на флешку або інший ПК.` });
+  return out;
+}
+function renderRems() {
+  const act = { save: ['Зберегти файл', 'save'], print: ['Друк', 'print'], pdf: ['Зберегти PDF', 'pdf'], backup: ['Резервна копія', 'backup'], pw: ['Змінити пароль', 'pw'] };
+  $('#rems').innerHTML = reminders().map(r => `<div class="rem ${r.level}"><span>${esc(r.text)}</span>${(r.kind !== 'print' && r.kind !== 'pdf') || can('print') ? `<button class="btn sm" type="button" data-rem="${act[r.kind][1]}">${act[r.kind][0]}</button>` : ''}</div>`).join('');
+}
+
+/* =====================================================================
+   Інтерфейс
+   ===================================================================== */
+let TAB = 'entries', SPREAD = null, LAY = null, PS = {};
+const TABS_GUEST = ['pages', 'auth', 'lib', 'about'];
+function renderHeader() {
+  const id = D.ident;
+  document.title = `Формуляр ${id.type} № ${id.serial}`;
+  $('#h-title').textContent = `Формуляр ${id.type} № ${id.serial}`;
+  $('#h-sub').innerHTML = `борт. № <b>${esc(id.reg)}</b> · САМО <b>${esc(id.camo)}</b> · ${chron().length} ${plural(chron().length, 'запис', 'записи', 'записів')}`;
+  $('#who').innerHTML = CU ? `<b>${esc(userName())}</b> · ${esc(ROLES[CU.role]?.name || '')} <button class="linkbtn" type="button" id="b-out">Вийти</button>` : '';
+  $('#b-save').innerHTML = `${ic('save')} ${dirty ? 'Зберегти файл' : 'Збережено'}`;
+  $('#b-save').className = 'btn' + (dirty ? ' primary' : '');
+  $('#b-save').hidden = isGuest();
+  $('#b-print').innerHTML = `${ic('print')} Друк / PDF`;
+  $('#b-print').hidden = !can('print');
+  $('#b-idea').innerHTML = `${ic('idea')} Пропозиція`;
+  $('#b-idea').hidden = isGuest();
+  $('#b-more').innerHTML = ic('more');
+  $('#fab').innerHTML = `${ic('plus')} Запис`;
+  $('#fab').hidden = TAB !== 'entries' || !can('entry');
+  $('#b-out')?.addEventListener('click', logout);
+}
+function tabsFor() {
+  const all = [['entries', 'Записи', chron().length], ['pages', 'Сторінки', ''], ['auth', 'Повноваження', D.auths.filter(a => a.active).length], ['lib', 'Стандартні роботи', D.lib.motive.length + D.lib.work.length],
+    ['admin', 'Адміністрування', ''], ['sugg', 'Пропозиції', D.sugg.length], ['log', 'Журнал змін', D.history.length], ['about', 'Файл і версія', '']];
+  return isGuest() ? all.filter(t => TABS_GUEST.includes(t[0])) : all;
+}
+function renderTabs() {
+  const t = tabsFor();
+  if (!t.some(x => x[0] === TAB)) TAB = t[0][0];
+  $('#tabs').innerHTML = t.map(([k, l, n]) => `<button class="tab" role="tab" type="button" data-tab="${k}" aria-selected="${TAB === k}">${l}${n !== '' ? `<span class="n">${n}</span>` : ''}</button>`).join('');
+}
+function renderAll() {
+  if (!CU) return;
+  LAY = layout(); PS = pageState(LAY);
+  renderTabs(); renderHeader(); renderRems();
+  ({ entries: viewEntries, pages: viewPages, auth: viewAuth, lib: viewLib, admin: viewAdmin, sugg: viewSugg, log: viewLog, about: viewAbout })[TAB]();
+}
+const entryNeedsPrint = e => { const p = LAY.pageOf[e.id]; return p != null && (PS[p]?.print || PS[p + 1]?.print); };
+const flags = e => [e.voided ? '<span class="chip bad">Анульовано</span>' : '', e.major && !e.voided ? '<span class="chip chg">Базове ТО</span>' : '',
+  e.rev && !e.voided ? `<span class="chip chg">Зм. ${e.rev}</span>` : '', !e.voided && entryNeedsPrint(e) ? '<span class="chip warn">Друк</span>' : ''].filter(Boolean).join(' ');
+const sigHtml = e => sigText(e).replace(/\n/g, '<br>') || '<span class="faint">—</span>';
+function curSpread() { const sp = LAY.spreads; return sp.find(s => s.left === SPREAD) || sp.find(s => s.rows.length && (PS[s.left].print || PS[s.right].print)) || [...sp].reverse().find(s => s.rows.length) || sp[0]; }
+function pgChips(no) {
+  const s = PS[no] || {};
+  return [s.print ? '<span class="chip warn">друк</span>' : s.reverse ? '<span class="chip warn">зворотна — друк</span>' : '', s.pdf ? '<span class="chip chg">PDF</span>' : ''].join('');
+}
+function spreadTabs(cur) {
+  return `<div class="spreads" role="tablist" aria-label="Розвороти">${LAY.spreads.map(s => `<button class="sp" type="button" role="tab" data-sp="${s.left}" aria-selected="${s === cur}"><b>с. ${s.left}–${s.right}</b><span>${s.rows.length} зап.</span>
+    ${!isGuest() && (PS[s.left].print || PS[s.left].reverse || PS[s.right].print || PS[s.right].reverse || PS[s.left].pdf || PS[s.right].pdf) ? `<span class="pgstat">${pgChips(s.left) || ''}${pgChips(s.right) ? `<span class="small faint">${s.right}:</span>${pgChips(s.right)}` : ''}</span>` : ''}
+    <i style="width:${Math.min(100, s.used / LAY.body * 100).toFixed(0)}%"></i></button>`).join('')}</div>`;
+}
+/* У «Записах» видно все: анульовані, змінені — для адміністратора; порядок — за датою */
+function viewEntries() {
+  const v = $('#view');
+  const all = [...D.entries].sort(cmpE);
+  if (!all.length) {
+    v.innerHTML = `<section class="panel"><div class="empty"><b>Записів ще немає</b>${can('entry') ? 'Натисніть «Запис» унизу праворуч.' : ''} Перший запис ляже на розворот с. ${D.ident.startPage}–${D.ident.startPage + 1}.</div></section>`;
+    return;
+  }
+  const cur = curSpread();
+  const onSpread = new Set(cur.rows.map(r => r.e.id));
+  const rows = all.filter(e => onSpread.has(e.id) || (e.voided && neighbourSpread(e) === cur));
+  v.innerHTML = `${LAY.warnings.length ? `<div class="note warn" style="margin-bottom:12px">${LAY.warnings.map(esc).join('<br>')}</div>` : ''}${spreadTabs(cur)}
+  <section class="panel" style="margin-top:8px">
+    <div class="tw wide"><table class="grid"><thead>
+      <tr class="pg-h"><th colspan="6">Сторінка ${cur.left} <span>ліва</span></th><th class="sp-col" rowspan="2"></th><th colspan="6">Сторінка ${cur.right} <span>права</span></th></tr>
+      <tr><th>Дата</th><th class="num">З останнього ТО</th><th class="num">Загальне</th><th class="num">Після базового ТО</th><th class="num">Посадки</th><th>Підстава для ТО</th>
+        <th>Що зроблено</th><th>WO</th><th>CRS</th><th>Контр. аркуш</th><th>ТБЖ</th><th>Підпис</th></tr></thead>
+      <tbody>${rows.map(e => `<tr class="e${e.voided ? ' voided' : ''}" data-e="${e.id}" tabindex="0"><td><b>${fd(e.date)}</b><div class="flags">${flags(e)}</div></td>
+        ${HOURS.map(k => `<td class="num">${hm(e[k])}</td>`).join('')}<td class="num">${e.landings ?? ''}</td><td class="txt">${esc(e.motive)}</td><td class="sp-col"></td>
+        <td class="wd">${esc(e.work)}${e.voided ? `<div class="small">Анульовано: ${esc(e.voidReason)}</div>` : ''}</td><td class="nw">${esc(e.wo)}</td><td class="nw">${esc(e.crs)}</td><td>${esc(e.check)}</td><td class="nw">${esc(e.techLog)}</td><td class="sig">${sigHtml(e)}</td></tr>`).join('')
+        || '<tr><td colspan="13" class="empty">На цьому розвороті ще немає записів.</td></tr>'}</tbody></table></div>
+    <div class="cards">${rows.map(e => `<button class="card${e.voided ? ' voided' : ''}" type="button" data-e="${e.id}">
+      <div class="row-between"><b>${fd(e.date)}</b><span>${flags(e)}</span></div>
+      <div class="what">${esc(e.work || e.motive)}</div>
+      <dl><div><dt>З ост. ТО</dt><dd>${hm(e.fhMx) || '—'}</dd></div><div><dt>Загальне</dt><dd>${hm(e.fhTotal) || '—'}</dd></div><div><dt>Після баз. ТО</dt><dd>${hm(e.fhMajor) || '—'}</dd></div><div><dt>Посадки</dt><dd>${e.landings ?? '—'}</dd></div></dl>
+      <div class="meta">${[e.wo ? 'WO ' + esc(e.wo) : '', e.crs ? 'CRS ' + esc(e.crs) : '', e.check ? 'КА ' + esc(e.check) : '', e.techLog ? 'ТБЖ ' + esc(e.techLog) : ''].filter(Boolean).join(' · ')}</div>
+      <div class="meta">${sigHtml(e)}</div></button>`).join('') || '<div class="empty">На цьому розвороті ще немає записів.</div>'}</div>
+  </section>
+  ${D.entries.some(e => e.voided) ? `<div class="small muted" style="margin-top:8px">Анульовані записи: ${D.entries.filter(e => e.voided).sort(cmpE).map(e => `<button class="linkbtn" type="button" data-e="${e.id}">${fd(e.date)}</button>`).join(', ')} — на сторінках не друкуються.</div>` : ''}`;
+}
+function neighbourSpread(e) { const { prev } = neighbours(e.date, e); return prev ? LAY.spreads.find(s => s.rows.some(r => r.e === prev)) : LAY.spreads[0]; }
+function viewPages() {
+  const cur = curSpread();
+  const need = needPrintList(LAY, PS);
+  $('#view').innerHTML = `<div class="preview">${spreadTabs(cur)}
+    <div class="small muted">Так розворот виглядатиме на папері: кожна сторінка — A5 альбомна (210 × 148 мм). На сторінках лише чинні дані — без позначок змін і анульованих записів.</div>
+    ${!isGuest() && need.length ? `<div class="note warn">Потрібно роздрукувати: ${need.map(n => `с. ${n}${PS[n].reverse ? ' (зворотна)' : ''}`).join(', ')}.${LAY.pages.some(p => PS[p.no].revOut) ? ` Зворотна сторінка ${LAY.pages.filter(p => PS[p.no].revOut).map(p => PS[p.no].revOut).join(', ')} — поза електронним формуляром.` : ''}${can('print') ? ' <button class="btn sm" type="button" data-rem="print">Друк</button>' : ''}</div>` : ''}
+    <div class="pv-stage" id="pv"><div class="pv-inner" id="pvi">${pageHtml(LAY, cur, 'L')}${pageHtml(LAY, cur, 'R')}</div></div></div>`;
+  fitPreview();
+}
+function fitPreview() {
+  const st = $('#pv'), inner = $('#pvi'); if (!st || !inner) return;
+  inner.style.flexDirection = st.clientWidth < 600 ? 'column' : 'row';
+  inner.style.transform = 'none';
+  const w = inner.scrollWidth, h = inner.scrollHeight, k = Math.min(1, (st.clientWidth - 28) / w);
+  inner.style.transform = `scale(${k})`;
+  st.style.height = (h * k + 28) + 'px';
+}
+window.addEventListener('resize', () => { if (TAB === 'pages') fitPreview(); });
+
+function viewAuth() {
+  const ed = can('settings');
+  $('#view').innerHTML = `<div class="note" style="margin-bottom:12px">Одна особа може мати кілька повноважень, наприклад САМО <b>26САМО-001</b> і ТОР <b>26ОАЕ-19</b>. У графі «Підпис» друкуються прізвище і номери повноважень.${ed ? '' : ' Режим перегляду.'}</div>
+  <section class="panel"><div class="panel-h"><h2>Особи з повноваженнями</h2>${ed ? `<button class="btn primary sm" type="button" data-act="holder-new">${ic('plus')} Особа</button>` : ''}</div>
+  <div class="auth-list">${D.holders.map(h => { const as = D.auths.filter(a => a.holder === h.id);
+    return `<div class="holder"><div><h3>${esc(h.name)}</h3>${h.position ? `<div class="small muted">${esc(h.position)}</div>` : ''}
+      <div class="auths">${as.map(a => `<button class="auth${a.active ? '' : ' off'}" type="button" data-auth="${a.id}"${ed ? '' : ' disabled'}><span class="o">${ORG[a.org]}${a.to ? ` · до ${fd(a.to)}` : ''}${a.active ? '' : ' · не діє'}</span><b>${esc(a.code)}</b></button>`).join('') || '<span class="small faint">Повноважень ще немає</span>'}</div></div>
+      ${ed ? `<div class="actions"><button class="btn sm" type="button" data-act="auth-new" data-h="${h.id}">${ic('plus')} Повноваження</button><button class="btn sm ghost" type="button" data-act="holder-edit" data-h="${h.id}">Змінити</button></div>` : '<div></div>'}</div>`; }).join('')
+    || '<div class="empty"><b>Реєстр порожній</b></div>'}</div></section>`;
+}
+function viewLib() {
+  const ed = can('settings');
+  const used = kind => { const c = {}; for (const e of D.entries) { const s = splitStd(kind, e[kind]); if (s.std) c[s.std] = (c[s.std] || 0) + 1; } return c; };
+  const panel = (kind, title, sub) => { const u = used(kind), lib = D.lib[kind];
+    return `<section class="panel"><div class="panel-h"><div><h2>${title}</h2><div class="small muted">${sub}</div></div>${ed ? `<button class="btn primary sm" type="button" data-act="lib-new" data-k="${kind}">${ic('plus')} Додати</button>` : ''}</div>
+    <div>${lib.map((it, i) => `<div class="lib-i"><div><div class="t">${esc(it.text)}</div>${isGuest() ? '' : `<div class="u">${u[it.id] ? `у записах: ${u[it.id]}` : 'ще не використано'}</div>`}</div>
+      ${ed ? `<div class="actions"><button class="btn sm ghost" type="button" data-act="lib-up" data-k="${kind}" data-i="${it.id}" aria-label="Вище"${i ? '' : ' disabled'}>↑</button><button class="btn sm ghost" type="button" data-act="lib-down" data-k="${kind}" data-i="${it.id}" aria-label="Нижче"${i < lib.length - 1 ? '' : ' disabled'}>↓</button>
+        <button class="btn sm" type="button" data-act="lib-edit" data-k="${kind}" data-i="${it.id}">Змінити</button><button class="btn sm danger" type="button" data-act="lib-del" data-k="${kind}" data-i="${it.id}">Видалити</button></div>` : '<div></div>'}</div>`).join('')
+      || '<div class="empty"><b>Список порожній</b></div>'}</div></section>`; };
+  $('#view').innerHTML = `<div style="display:flex;flex-direction:column;gap:14px">
+    <div class="note">Стандартні тексти — <b>лише англійською мовою та цифрами</b>. У записі їх обирають зі списку; найнижчий пункт — «Ваш варіант» (вручну); позначка «+ Ваш варіант» дописує власний текст після стандартного.</div>
+    ${panel('motive', 'Стандартні підстави для ТО', 'Ліва сторінка, графа «Підстава для ТО (Maintenance motive)»')}
+    ${panel('work', 'Стандартні роботи', 'Права сторінка, графа «Що зроблено (Work performed)»')}</div>`;
+}
+function libForm(kind, it) {
+  const d = openDlg({ title: it ? 'Змінити стандартний текст' : 'Новий стандартний текст', sub: esc(LIB_NAME[kind]),
+    body: `<form id="f-l" class="fields">${fld('text', 'Текст англійською (друкується у формулярі так, як написано)', 'textarea', it?.text || '', { full: 1, req: 1, hint: 'Лише латинські літери, цифри і розділові знаки' })}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-l">Зберегти</button></div>` });
+  $('#f-l', d).addEventListener('submit', ev => {
+    ev.preventDefault(); const t = ev.target.text.value.trim();
+    const dup = D.lib[kind].some(x => x !== it && x.text === t);
+    if (!showErr(ev.target, !t ? { text: 'Введіть текст' } : !EN_RE.test(t) ? { text: 'Лише англійською мовою та цифрами' } : dup ? { text: 'Такий текст уже є у списку' } : {})) return;
+    if (it) { if (t !== it.text) { logH('lib', null, { [LIB_NAME[kind]]: [libShort(it.text), libShort(t)] }); it.text = t; } }
+    else libAdd(kind, t);
+    changed(); d.close();
+  });
+  setTimeout(() => $('#i_text', d).focus(), 30);
+}
+function libAct(a, kind, id) {
+  if (!can('settings')) return;
+  const lib = D.lib[kind], i = lib.findIndex(x => x.id === id), it = lib[i];
+  if (a === 'lib-new') return libForm(kind);
+  if (!it) return;
+  if (a === 'lib-edit') return libForm(kind, it);
+  if (a === 'lib-up' || a === 'lib-down') { const j = a === 'lib-up' ? i - 1 : i + 1; if (j < 0 || j >= lib.length) return; [lib[i], lib[j]] = [lib[j], lib[i]]; changed(); return; }
+  if (a === 'lib-del') {
+    const d = openDlg({ title: 'Видалити стандартний текст?', body: `<div class="note">${esc(it.text)}</div><div class="small muted">Уже внесені записи не зміняться.</div>`,
+      foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn danger" type="button" data-a="ok">Видалити</button></div>` });
+    $('[data-a="ok"]', d).addEventListener('click', () => { lib.splice(i, 1); logH('lib', null, { [LIB_NAME[kind]]: [libShort(it.text), ''] }); changed(); d.close(); });
+  }
+}
+function viewLog() {
+  const kinds = { create: 'Внесено запис', change: 'Уточнення запису', void: 'Анулювання', recalc: 'Перерахунок', print: 'Роздруковано', pdf: 'Збережено PDF', ident: 'Змінено реквізити', auth: 'Повноваження', lib: 'Стандартні роботи', user: 'Користувачі', login: 'Вхід', sugg: 'Пропозиції', fix: 'Уточнено до друку' };
+  const byId = Object.fromEntries(D.entries.map(e => [e.id, e]));
+  $('#view').innerHTML = `<section class="panel"><div class="panel-h"><h2>Журнал змін</h2><span class="small muted">Хто, коли і що змінив. Журнал лише доповнюється.</span></div>
+  <div class="log">${[...D.history].reverse().slice(0, 600).map(h => `<div class="log-i"><div><b>${fdt(h.ts)}</b><div class="small muted">${esc(h.by)}</div></div>
+    <div><b>${kinds[h.kind] || h.kind}${h.kind === 'change' || h.kind === 'void' ? ' № ' + h.rev : ''}</b>${byId[h.entry] ? ` · запис від ${fd(byId[h.entry].date)}` : ''}
+    ${h.reason ? `<div class="small">Причина: ${esc(h.reason)}</div>` : ''}
+    ${Object.keys(h.changes || {}).length ? `<ul>${Object.entries(h.changes).filter(([k]) => k !== 'man').map(([k, [a, b]]) => `<li>${esc(F[k] || k)}: <s>${esc(fmtVal(k, a))}</s> → ${esc(fmtVal(k, b))}</li>`).join('')}</ul>` : ''}</div></div>`).join('')
+    || '<div class="empty">Змін ще немає.</div>'}</div></section>`;
+}
+function viewAbout() {
+  const id = D.ident, ev = D.events, st = D.settings, ed = can('settings'), g = isGuest();
+  $('#view').innerHTML = `<div style="display:flex;flex-direction:column;gap:14px">
+  <section class="panel"><div class="panel-h"><h2>Реквізити формуляра</h2>${ed ? '<button class="btn sm" type="button" data-act="ident">Змінити</button>' : ''}</div>
+    <div class="panel-b"><dl class="kv"><dt>Назва</dt><dd>${esc(id.title)}</dd><dt>САМО</dt><dd>${esc(id.camo)}</dd><dt>Тип ПС</dt><dd>${esc(id.type)}</dd>
+    <dt>Заводський №</dt><dd>${esc(id.serial)} <span class="small muted">(перші 4 цифри WO і CRS: ${boardNo()})</span></dd><dt>Бортовий №</dt><dd>${esc(id.reg)}</dd><dt>Перша сторінка</dt><dd>${id.startPage}</dd>
+    <dt>Зворотні сторінки</dt><dd>${id.leaf === 'spread' ? `на одному аркуші ${id.startPage} і ${id.startPage + 1}, ${id.startPage + 2} і ${id.startPage + 3}…` : 'книжкова нумерація: 1 і 2, 3 і 4…'}</dd></dl></div></section>
+  ${g ? '' : `<section class="panel"><div class="panel-h"><h2>Збереження і резервні копії</h2></div><div class="panel-b" style="display:flex;flex-direction:column;gap:12px">
+    <dl class="kv"><dt>Збережено у файл</dt><dd>${ev.fileSavedAt ? fdt(ev.fileSavedAt) : 'ще ні'}${dirty ? ' · <b>є незбережені зміни</b>' : ''}</dd>
+      <dt>PDF</dt><dd>${ev.pdfAt ? fdt(ev.pdfAt) : 'ще ні'}</dd><dt>Резервна копія</dt><dd>${ev.backupAt ? fdt(ev.backupAt) : 'ще ні'}</dd>
+      <dt>Відкритий файл</dt><dd>${fileHandle ? esc(fileHandle.name) + ' (зберігається на місці)' : 'кожне збереження — новий файл у «Завантаженнях»'}</dd></dl>
+    <div class="actions"><button class="btn" type="button" data-act="backup">Резервна копія (файл з датою)</button><button class="btn" type="button" data-act="json">Дані окремо (.json)</button>
+      <button class="btn" type="button" data-act="csv">Таблиця для Excel (.csv)</button>${ed ? '<button class="btn" type="button" data-act="open">Відкрити інший файл…</button>' : ''}</div>
+    ${ed ? `<form class="fields" id="f-rem" style="max-width:560px">
+      <div class="fld"><label for="r-bak">Нагадувати про резервну копію, днів</label><input id="r-bak" name="remindBackupDays" type="number" min="0" inputmode="numeric" value="${st.remindBackupDays}"></div>
+      <div class="fld"><label for="r-pdf">Про PDF, днів</label><input id="r-pdf" name="remindPdfDays" type="number" min="0" inputmode="numeric" value="${st.remindPdfDays}"></div></form>` : ''}</div></section>`}
+  <section class="panel"><div class="panel-h"><h2>Версія програми: ${APP_VERSION}</h2></div><div class="panel-b" style="display:flex;flex-direction:column;gap:10px">
+    ${g ? '' : '<div class="note"><b>Як встановити нову версію без втрати даних.</b> Відкрийте новий файл формуляра, увійдіть, натисніть «Відкрити інший файл…» і оберіть свій поточний файл (або .json). Записи, користувачі, повноваження і журнал перенесуться, після чого збережіть файл.</div>'}
+    <ul class="small" style="margin:0;padding-left:18px">${CHANGELOG.map(([v, d, t]) => `<li><b>${v}</b> (${d}) — ${esc(t)}</li>`).join('')}</ul>
+    <div class="small muted">Файл: ${D.id} · схема даних ${D.schema} · створено ${fdt(D.createdAt)}</div></div></section></div>`;
+  $('#f-rem')?.addEventListener('change', e => { const n = +e.target.value; if (n >= 0) { D.settings[e.target.name] = n; changed(); } });
+}
+
+/* ---------- адміністрування ---------- */
+function viewAdmin() {
+  const mg = can('users');
+  const us = [...D.users].sort((a, b) => (a.role === 'chief' ? -1 : b.role === 'chief' ? 1 : 0) || a.login.localeCompare(b.login));
+  $('#view').innerHTML = `<div style="display:flex;flex-direction:column;gap:14px">
+  <section class="panel"><div class="panel-h"><h2>Мій обліковий запис</h2><button class="btn sm primary" type="button" data-act="my-pw">Змінити пароль</button></div>
+    <div class="panel-b"><dl class="kv"><dt>Логін</dt><dd><code>${esc(CU.login)}</code></dd><dt>Ім'я</dt><dd>${esc(CU.name)}</dd><dt>Роль</dt><dd>${esc(ROLES[CU.role]?.name)}</dd>
+    <dt>Повноваження</dt><dd>${CU.role === 'chief' ? 'усі' : permsOf(CU).map(p => PERMS.find(x => x[0] === p)[1]).join('\n') || 'лише перегляд'}</dd><dt>Пароль змінено</dt><dd>${CU.pwAt ? fdt(CU.pwAt) : '—'}${CU.defaultPw ? ' · <b>стандартний пароль</b>' : ''}</dd></dl></div></section>
+  ${mg ? `<section class="panel"><div class="panel-h"><div><h2>Користувачі</h2><div class="small muted">Логін і пароль кожного зберігаються у файлі формуляра — після змін збережіть файл.</div></div><button class="btn sm primary" type="button" data-act="user-new">${ic('plus')} Користувач</button></div>
+    <div>${us.map(u => `<div class="user-i"><div><h3>${esc(u.name || u.login)} ${u.active === false ? '<span class="chip muted">вимкнено</span>' : ''}</h3>
+      <div class="small muted">логін <code>${esc(u.login)}</code> · ${esc(ROLES[u.role]?.name)}${u.role === 'custom' ? ': ' + (u.perms || []).map(p => PERMS.find(x => x[0] === p)?.[1]).join('; ') : ''}</div></div>
+      <div class="actions">${u.role === 'chief' && CU.role !== 'chief' ? '' : u.id === CU.id ? '<span class="small faint">це ви</span>' : `<button class="btn sm" type="button" data-act="user-edit" data-u="${u.id}">Змінити</button>`}</div></div>`).join('')}</div></section>
+    <section class="panel"><div class="panel-b small muted">Ролі: <b>Головний адміністратор</b> — усе, один на файл; <b>Адміністратор</b> — усе, крім керування головним адміністратором; <b>Оператор</b> — внесення записів і друк; <b>Гість</b> — лише перегляд вкладок «Сторінки», «Повноваження», «Стандартні роботи», «Файл і версія»; <b>Окремі повноваження</b> — вибрані пункти. Користувач не може надати повноважень, яких не має сам.</div></section>` : ''}
+  <section class="panel"><div class="panel-b small muted">Захист логіном і паролем працює в межах програми. Файл формуляра потрібно зберігати так, щоб до нього мали доступ лише уповноважені особи.</div></section></div>`;
+}
+function pwForm(u, forced) {
+  const self = u.id === CU.id;
+  const d = openDlg({ title: self ? 'Змінити мій пароль' : `Новий пароль: ${u.login}`,
+    body: `<form id="f-pw" class="fields">${self ? fld('old', 'Поточний пароль', 'password', '', { full: 1, req: 1, attrs: ' autocomplete="current-password"' }) : ''}
+      ${fld('p1', 'Новий пароль', 'password', '', { full: 1, req: 1, attrs: ' autocomplete="new-password"', hint: 'Не менше 4 символів' })}${fld('p2', 'Повторіть новий пароль', 'password', '', { full: 1, req: 1, attrs: ' autocomplete="new-password"' })}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-pw">Зберегти пароль</button></div>` });
+  $('#f-pw', d).addEventListener('submit', ev => {
+    ev.preventDefault(); const f = ev.target, err = {};
+    if (self && pwHash(u.salt, f.old.value) !== u.hash) err.old = 'Невірний поточний пароль';
+    if (f.p1.value.length < 4) err.p1 = 'Не менше 4 символів';
+    else if (f.p1.value !== f.p2.value) err.p2 = 'Паролі не збігаються';
+    if (!showErr(f, err)) return;
+    setPassword(u, f.p1.value); delete u.defaultPw;
+    logH('user', null, { [u.login]: ['', self ? 'змінено свій пароль' : 'встановлено новий пароль'] });
+    changed(); d.close(); toast('Пароль змінено. Збережіть файл, щоб зміна діяла на інших пристроях.');
+  });
+}
+function userForm(u) {
+  if (!can('users')) return;
+  const isNew = !u, chief = u?.role === 'chief';
+  const myP = CU.role === 'chief' ? ALLP : permsOf(CU);
+  const roleOpts = Object.entries(ROLES).filter(([k]) => k !== 'chief' && (CU.role === 'chief' || k !== 'admin' || myP.length === ALLP.length)).map(([k, r]) => [k, r.name]);
+  const v = u || { login: '', name: '', role: 'operator', perms: [], active: true };
+  const d = openDlg({ title: isNew ? 'Новий користувач' : `Користувач ${u.login}`,
+    body: `<form id="f-u" class="fields">${fld('login', 'Логін (латиницею або цифрами)', 'text', v.login, { req: 1, attrs: isNew ? ' autocomplete="off" autocapitalize="off"' : ' disabled' })}${fld('name', 'Прізвище та ініціали (пишеться в журналі)', 'text', v.name, { req: 1 })}
+      ${chief ? '' : fld('role', 'Роль', 'select', v.role, { full: 1, options: roleOpts })}
+      <div class="fld full" data-f="perms" ${v.role === 'custom' ? '' : 'hidden'}><label>Повноваження</label><div class="perm-list">${PERMS.map(([k, l]) => `<label><input type="checkbox" name="perm_${k}"${(v.perms || []).includes(k) ? ' checked' : ''}${myP.includes(k) ? '' : ' disabled'}> <span>${esc(l)}</span></label>`).join('')}</div><span class="msg"></span></div>
+      ${isNew ? fld('p1', 'Пароль', 'password', '', { req: 1, attrs: ' autocomplete="new-password"' }) + fld('p2', 'Повторіть пароль', 'password', '', { req: 1, attrs: ' autocomplete="new-password"' }) : ''}
+      ${!isNew && !chief ? `<label class="fld check full"><input type="checkbox" name="active"${v.active !== false ? ' checked' : ''}> <span>Обліковий запис діє</span></label>` : ''}</form>`,
+    foot: `${!isNew ? '<button class="btn" type="button" data-a="pw">Встановити новий пароль</button>' : '<span></span>'}<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-u">Зберегти</button></div>` });
+  const f = $('#f-u', d);
+  f.role?.addEventListener('change', () => { $('[data-f="perms"]', f).hidden = f.role.value !== 'custom'; });
+  $('[data-a="pw"]', d)?.addEventListener('click', () => { d.close(); pwForm(u); });
+  f.addEventListener('submit', ev => {
+    ev.preventDefault(); const err = {};
+    const login = isNew ? f.login.value.trim() : u.login;
+    if (isNew) { if (!/^[A-Za-z0-9._-]{2,32}$/.test(login)) err.login = 'Латиниця, цифри, . _ -; від 2 символів'; else if (D.users.some(x => x.login.toLowerCase() === login.toLowerCase())) err.login = 'Такий логін уже є'; }
+    if (!f.name.value.trim()) err.name = 'Вкажіть прізвище';
+    const role = chief ? 'chief' : f.role.value;
+    const perms = role === 'custom' ? PERMS.map(p => p[0]).filter(k => f['perm_' + k]?.checked && myP.includes(k)) : [];
+    if (isNew) { if (f.p1.value.length < 4) err.p1 = 'Не менше 4 символів'; else if (f.p1.value !== f.p2.value) err.p2 = 'Паролі не збігаються'; }
+    if (!showErr(f, err)) return;
+    if (isNew) { const nu = { id: uid(), login, name: f.name.value.trim(), role, perms, active: true, createdAt: nowIso(), createdBy: userName() }; setPassword(nu, f.p1.value); D.users.push(nu);
+      logH('user', null, { [login]: ['', `створено: ${ROLES[role].name}`] }); }
+    else { const was = `${ROLES[u.role].name}${u.role === 'custom' ? ' (' + (u.perms || []).join(', ') + ')' : ''}${u.active === false ? ', вимкнено' : ''}`;
+      u.name = f.name.value.trim(); if (!chief) { u.role = role; u.perms = perms; u.active = !!f.active.checked; }
+      const now = `${ROLES[u.role].name}${u.role === 'custom' ? ' (' + perms.join(', ') + ')' : ''}${u.active === false ? ', вимкнено' : ''}`;
+      logH('user', null, { [u.login]: [was, now] }); }
+    changed(); d.close(); toast('Збережено. Збережіть файл, щоб зміни користувачів діяли.');
+  });
+}
+
+/* ---------- вхід ---------- */
+function showLogin(msg = '') {
+  CU = null;
+  $('.wrap').hidden = true; $('#fab').hidden = true;
+  let w = $('#login');
+  if (!w) { w = document.createElement('div'); w.id = 'login'; w.className = 'login-wrap'; document.body.appendChild(w); }
+  w.hidden = false;
+  w.innerHTML = `<form class="login" id="f-login" autocomplete="on"><div><h1>Формуляр ${esc(D.ident.type)} № ${esc(D.ident.serial)}</h1><div class="sub">борт. № ${esc(D.ident.reg)} · САМО ${esc(D.ident.camo)} · вхід до електронного формуляра</div></div>
+    ${msg ? `<div class="note bad">${esc(msg)}</div>` : ''}
+    <div class="fld"><label for="l-login">Логін</label><input id="l-login" name="login" autocomplete="username" autocapitalize="off" spellcheck="false" required></div>
+    <div class="fld"><label for="l-pw">Пароль</label><input id="l-pw" name="pw" type="password" autocomplete="current-password" required></div>
+    <button class="btn go" type="submit">Увійти</button><div class="small muted">Версія ${APP_VERSION}</div></form>`;
+  $('#f-login').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const l = ev.target.login.value.trim().toLowerCase(), p = ev.target.pw.value;
+    const u = D.users.find(x => x.login.toLowerCase() === l);
+    if (!u || u.active === false || pwHash(u.salt, p) !== u.hash) { showLogin('Невірний логін або пароль'); $('#l-login').value = l; $('#l-pw').focus(); return; }
+    login(u);
+  });
+  setTimeout(() => $('#l-login')?.focus(), 30);
+}
+function login(u) {
+  CU = u; sess.set(SKEY(), u.id);
+  $('#login') && ($('#login').hidden = true); $('.wrap').hidden = false;
+  if (isGuest() && !TABS_GUEST.includes(TAB)) TAB = 'pages';
+  renderAll();
+  offerRestore();
+}
+function logout() {
+  if (dirty && !confirm('Є незбережені у файл зміни. Вони лишаться в цьому браузері, але не у файлі. Вийти?')) return;
+  sess.del(SKEY()); showLogin();
+}
+
+/* ---------- діалоги ---------- */
+function openDlg({ title, sub = '', body, foot, wide = false }) {
+  const d = $('#dlg');
+  d.className = wide ? 'wide' : '';
+  d.innerHTML = `<div class="dlg"><div class="dlg-h"><div><h2>${esc(title)}</h2>${sub ? `<div class="sub">${sub}</div>` : ''}</div><button class="btn ghost sm" type="button" data-close aria-label="Закрити">${ic('x')}</button></div>
+    <div class="dlg-b">${body}</div>${foot ? `<div class="dlg-f">${foot}</div>` : ''}</div>`;
+  $$('[data-close]', d).forEach(b => b.addEventListener('click', () => d.close()));
+  if (!d.open) d.showModal();
+  return d;
+}
+const fld = (k, label, type = 'text', val = '', o = {}) => {
+  const id = 'i_' + k;
+  let input;
+  if (type === 'select') input = `<select id="${id}" name="${k}"${o.attrs || ''}>${o.options.map(([v, l]) => `<option value="${esc(v)}"${String(v) === String(val ?? '') ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select>`;
+  else if (type === 'textarea') input = `<textarea id="${id}" name="${k}"${o.attrs || ''}>${esc(val)}</textarea>`;
+  else if (type === 'hm') {
+    const [hh = '', mm = ''] = String(val ?? '').split(':');
+    input = `<div class="hmf"><input id="${id}" name="${k}_h" type="text" inputmode="numeric" autocomplete="off" placeholder="год" value="${esc(hh)}" aria-label="${esc(label)}, години">`
+      + `<span class="colon" aria-hidden="true">:</span><input class="mm" id="${id}_m" name="${k}_m" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="хв" value="${esc(mm)}" aria-label="${esc(label)}, хвилини (00–59)"></div>`;
+  }
+  else input = `<input id="${id}" name="${k}" type="${type}" value="${esc(val)}"${o.attrs || ''}>`;
+  return `<div class="fld${o.full ? ' full' : ''}" data-f="${k}"><label for="${id}">${esc(label)}${o.req ? ' *' : ''}</label>${input}${o.hint ? `<span class="hint">${o.hint}</span>` : ''}<span class="msg"></span></div>`;
+};
+const formVals = f => Object.fromEntries([...new FormData(f).entries()]);
+function showErr(form, err) {
+  $$('.fld', form).forEach(x => { x.classList.remove('err'); const m = $('.msg', x); if (m) m.textContent = ''; });
+  let first = null;
+  for (const [k, m] of Object.entries(err)) { const x = $(`[data-f="${k}"]`, form); if (x) { x.classList.add('err'); const s = $('.msg', x); if (s) s.textContent = m; first = first || x; } }
+  if (first) { first.hidden = false; first.closest('details')?.setAttribute('open', ''); first.scrollIntoView({ block: 'center', behavior: 'smooth' }); first.querySelector('input:not([readonly]),select,textarea')?.focus({ preventScroll: true }); }
+  return !Object.keys(err).length;
+}
+const guard = (perm, fn) => (...a) => can(perm) ? fn(...a) : toast('Недостатньо повноважень');
+function authOpts(org, date, current) {
+  const ok = a => a.org === org && (a.active || a.id === current) && (!date || ((!a.from || a.from <= date) && (!a.to || a.to >= date)) || a.id === current);
+  return [['', '— не вказано —'], ...D.auths.filter(ok).map(a => [a.id, `${holderOf(a)?.name} — ${a.code}${a.scope ? ' (' + a.scope + ')' : ''}`])];
+}
+/* Поля «години : хвилини»: лише цифри, хвилини 00–59, перехід між полями */
+function hmCollect(raw) {
+  for (const k of Object.keys(raw).filter(x => x.endsWith('_h')).map(x => x.slice(0, -2))) {
+    const h = String(raw[k + '_h'] ?? '').trim(), m = String(raw[k + '_m'] ?? '').trim();
+    raw[k] = h || m ? `${h || '0'}:${(m || '0').padStart(2, '0')}` : '';
+    delete raw[k + '_h']; delete raw[k + '_m'];
+  }
+  return raw;
+}
+function hmBind(form) {
+  $$('.hmf', form).forEach(box => {
+    const [h, m] = $$('input', box);
+    h.addEventListener('keydown', ev => { if ([':', '.', ',', ' '].includes(ev.key)) { ev.preventDefault(); m.focus(); m.select(); } });
+    h.addEventListener('input', () => {
+      const v = h.value, sp = v.match(/^\s*(\d*)\s*[:.,]\s*(\d*)/);
+      if (sp) { h.value = sp[1]; m.value = sp[2].slice(0, 2); if (+m.value > 59) m.value = '59'; m.focus(); return; }
+      const d = v.replace(/\D/g, ''); if (d !== v) h.value = d;
+    });
+    m.addEventListener('input', () => {
+      let d = m.value.replace(/\D/g, '').slice(0, 2);
+      if (d.length === 1 && +d > 5) d = '0' + d;
+      if (+d > 59) d = '59';
+      m.value = d;
+    });
+    m.addEventListener('blur', () => { if (m.value.length === 1) m.value = '0' + m.value; });
+    m.addEventListener('keydown', ev => { if (ev.key === 'Backspace' && !m.value) { ev.preventDefault(); h.focus(); } });
+  });
+}
+const digitsOnly = inp => inp.addEventListener('input', () => { const d = inp.value.replace(/\D/g, ''); if (d !== inp.value) inp.value = d; });
+
+/* ---------- вибір стандартного тексту ---------- */
+function pickHtml(kind, text, isNew) {
+  const s = splitStd(kind, text), lib = D.lib[kind];
+  const selVal = s.std || (s.own || !isNew || !lib.length ? '__own' : '');
+  return `<div class="pick" data-pick="${kind}">
+    <div class="pick-h"><b>${esc(LIB_NAME[kind])} *</b><span class="small faint">стандартна · Ваш варіант · стандартна + Ваш варіант</span></div>
+    <div class="fld" data-f="${kind}_std"><select name="${kind}_std" aria-label="${esc(LIB_NAME[kind])}">
+      <option value="">— оберіть —</option>${lib.map(it => `<option value="${it.id}"${it.id === selVal ? ' selected' : ''}>${esc(libShort(it.text))}</option>`).join('')}
+      <option value="__own"${selVal === '__own' ? ' selected' : ''}>Ваш варіант (внести вручну)</option></select><span class="msg"></span></div>
+    <div class="std" data-std hidden></div>
+    <label class="fld check" data-addown><input type="checkbox" name="${kind}_add"${s.mode === 'both' ? ' checked' : ''}> <span><b>+ Ваш варіант</b> — дописати свій текст після стандартного</span></label>
+    <div class="fld" data-f="${kind}"><label for="i_${kind}" data-ownlbl>Ваш варіант</label><textarea id="i_${kind}" name="${kind}_own">${esc(s.own)}</textarea><span class="msg"></span></div>
+    ${can('settings') ? `<label class="fld check small" data-tolib><input type="checkbox" name="${kind}_tolib"> <span>Додати мій варіант до стандартних (лише англійською)</span></label>` : '<span data-tolib hidden></span>'}
+  </div>`;
+}
+function pickBind(form, kind) {
+  const box = $(`[data-pick="${kind}"]`, form), sel = form[kind + '_std'], add = form[kind + '_add'];
+  const sync = () => {
+    const v = sel.value, it = D.lib[kind].find(x => x.id === v), own = v === '__own';
+    const std = $('[data-std]', box); std.hidden = !it; std.textContent = it ? it.text : '';
+    $('[data-addown]', box).hidden = !it;
+    $(`[data-f="${kind}"]`, box).hidden = !(own || (it && add.checked));
+    $('[data-ownlbl]', box).textContent = it ? 'Ваш варіант — дописується з нового рядка після стандартного тексту' : 'Ваш варіант';
+    $('[data-tolib]', box).hidden = !own || !can('settings');
+  };
+  sel.addEventListener('change', () => { sync(); if (sel.value === '__own') form[kind + '_own'].focus(); });
+  add.addEventListener('change', () => { sync(); if (add.checked) form[kind + '_own'].focus(); });
+  sync();
+}
+function pickCollect(raw, kind) {
+  const v = raw[kind + '_std'] || '', it = D.lib[kind].find(x => x.id === v);
+  const own = String(raw[kind + '_own'] || '').trim();
+  let text = '', err = '';
+  if (v === '__own') { text = own; if (!own) err = 'Внесіть текст'; }
+  else if (it) {
+    if (raw[kind + '_add']) { if (!own) err = 'Допишіть Ваш варіант або зніміть позначку «+ Ваш варіант»'; text = own ? it.text + '\n' + own : it.text; }
+    else text = it.text;
+  } else err = 'Оберіть стандартний текст або «Ваш варіант»';
+  return { text, err, errKey: v === '__own' || (it && raw[kind + '_add']) ? kind : kind + '_std', tolib: v === '__own' && !!raw[kind + '_tolib'] && !!own };
+}
+
+/* ---------- WO / CRS: поле з сегментами ---------- */
+function segHtml(kind, value, crsType, date, on = true) {
+  const yrOk = can('year');
+  const isCrs = kind === 'crs';
+  const t = isCrs ? (crsType || 'tech') : 'wo';
+  const p = parseCode(isCrs ? t : 'wo', value) || { yy: curYY(), mm: date ? date.slice(5, 7) : '', dd: date ? date.slice(8, 10) : '', n: '', s: '' };
+  const sg = (name, val, lbl, w = '') => `<label class="sg"><input name="${kind}_${name}" class="${w}" value="${esc(val)}" inputmode="numeric" autocomplete="off" maxlength="${name === 'n' && !isCrs ? 3 : 2}"${name === 'yy' && !yrOk ? ' readonly title="Рік — поточний; змінити може адміністратор"' : ''} aria-label="${kind.toUpperCase()}: ${lbl}">${lbl}</label>`;
+  return `<div class="fld full" data-f="${kind}"><label class="check segon"><input type="checkbox" name="${kind}_on"${on ? ' checked' : ''}> <b>${kind.toUpperCase()}</b> <span class="small faint">— зніміть позначку, якщо ${kind.toUpperCase()} у цьому записі немає</span></label>
+    <div data-segbody>${isCrs ? `<div class="radios" style="margin-bottom:6px"><label><input type="radio" name="crsType" value="tech"${t !== 'pilot' ? ' checked' : ''}> Технік</label><label><input type="radio" name="crsType" value="pilot"${t === 'pilot' ? ' checked' : ''}> Льотчик</label></div>` : ''}
+    <div class="seg" data-seg="${kind}"><label class="sg"><span class="fix">${boardNo()}</span>борт</label>${sg('yy', p.yy, 'рік')}${sg('mm', p.mm, 'міс.')}${sg('dd', p.dd, 'день')}<span class="sep">-</span>${sg('n', p.n, isCrs ? '01–99' : '3 цифри', isCrs ? '' : 'w3')}<span class="sep">/</span>${isCrs ? '<span class="o" data-o>o</span><span class="sep" data-o>/</span>' : ''}${sg('s', p.s, isCrs ? '<span><span data-lo>1</span>–99</span>' : '1–99')}</div>
+    <span class="segval" data-segval></span></div><span class="msg"></span></div>`;
+}
+function segBind(form, kind) {
+  const box = $(`[data-seg="${kind}"]`, form), ins = $$('input', box);
+  const show = () => {
+    const t = kind === 'crs' ? (form.crsType.value || 'tech') : 'wo';
+    $$('[data-o]', box).forEach(x => { x.hidden = t !== 'pilot'; });
+    const lo = $('[data-lo]', box); if (lo) lo.textContent = t === 'pilot' ? '0' : '1';
+    $(`[data-f="${kind}"] [data-segval]`, form).textContent = buildCode(t, segVals(form, kind));
+  };
+  ins.forEach((inp, i) => {
+    inp.addEventListener('input', () => { const d = inp.value.replace(/\D/g, ''); if (d !== inp.value) inp.value = d; if (d.length >= +inp.maxLength) { const nx = ins.slice(i + 1).find(x => !x.readOnly); nx?.focus(); nx?.select(); } show(); });
+    inp.addEventListener('blur', () => { const name = inp.name.split('_').pop(); if (inp.value && ['mm', 'dd', 'n', 'yy'].includes(name)) { inp.value = inp.value.padStart(+inp.maxLength, '0'); show(); } });
+    inp.addEventListener('keydown', ev => { if (ev.key === 'Backspace' && !inp.value && i) { ev.preventDefault(); const pv = [...ins.slice(0, i)].reverse().find(x => !x.readOnly); pv?.focus(); } });
+  });
+  if (kind === 'crs') $$('input[name="crsType"]', form).forEach(r => r.addEventListener('change', show));
+  const on = form[kind + '_on'], body = $(`[data-f="${kind}"] [data-segbody]`, form);
+  const toggle = () => { body.hidden = !on.checked; if (!on.checked) { $(`[data-f="${kind}"]`, form).classList.remove('err'); $(`[data-f="${kind}"] .msg`, form).textContent = ''; } };
+  on.addEventListener('change', toggle); toggle();
+  show();
+  return show;
+}
+const segVals = (form, kind) => Object.fromEntries(['yy', 'mm', 'dd', 'n', 's'].map(k => [k, form[`${kind}_${k}`].value.trim()]));
+
+/* =====================================================================
+   Новий запис / уточнення запису
+   ===================================================================== */
+function entryForm(e) {
+  const editing = !!e;
+  if (editing && !can('correct')) return toast('Уточнювати записи може лише адміністратор або уповноважена особа');
+  if (!editing && !can('entry')) return toast('Недостатньо повноважень');
+  const last = chron().slice(-1)[0];
+  const val = e ? { ...e, fhTotal: hm(e.fhTotal), mMx: e.man?.fhMx ? hm(e.fhMx) : '', mMajor: e.man?.fhMajor ? hm(e.fhMajor) : '' }
+    : { date: todayIso(), techLog: last?.techLog || '', camoAuth: last?.camoAuth || '', amoAuth: last?.amoAuth || '', major: false, crsType: 'tech' };
+  const showMan = can('correct') || !chron().length;
+  const d = openDlg({ title: e ? 'Уточнити запис' : 'Новий запис', sub: `${esc(D.ident.type)} № ${esc(D.ident.serial)} · борт ${esc(D.ident.reg)}${e ? ' · запис від ' + fd(e.date) : ''}`,
+    body: `${e ? '<div class="note warn">Уточнення отримає номер зміни; було/стало і причина потраплять у журнал і реєстр змін. Наступні записи буде перераховано, а змінені сторінки позначено для повторного друку і PDF.</div>' : ''}
+    <form id="f-e" novalidate>
+    <div class="fs"><h4>Ліва сторінка</h4><div class="fields">${fld('date', 'Дата', 'date', val.date, { req: 1, attrs: ` max="${todayIso()}"` })}
+      ${fld('landings', 'Кількість посадок', 'text', val.landings ?? '', { req: 1, attrs: ' inputmode="numeric" autocomplete="off"' })}
+      ${fld('fhTotal', 'Напрацювання загальне (борт)', 'hm', val.fhTotal, { req: 1, full: 1 })}</div>
+      <div class="calcbox" id="calcbox" aria-live="polite"></div>
+      <label class="majorchk"><input type="checkbox" name="major"${val.major ? ' checked' : ''}> <span><b>Базове ТО</b> (Hours since major maintenance)<small>У цьому записі «Після базового ТО» — години між базовими ТО. Наступний запис починається з нуля: 0:00 + напрацювання з останнього ТО.</small></span></label>
+      ${pickHtml('motive', val.motive, !e)}
+      ${showMan ? `<details class="mancor"${val.mMx || val.mMajor ? ' open' : ''}><summary>Ручне коригування (перший запис або виправлення)</summary>
+        <div class="fields" style="margin-top:10px">${fld('mMx', 'З останнього ТО', 'hm', val.mMx, { hint: 'Порожньо — різниця загальних' })}${fld('mMajor', 'Після базового ТО', 'hm', val.mMajor, { hint: 'Порожньо — розраховується' })}</div></details>` : ''}</div>
+    <div class="fs" style="margin-top:14px"><h4>Права сторінка</h4>${pickHtml('work', val.work, !e)}<div class="fields">
+      ${segHtml('wo', val.wo, null, val.date, e ? !!e.wo : true)}${segHtml('crs', val.crs, val.crsType, val.date, e ? !!e.crs : true)}
+      ${fld('check', 'Номер контрольного аркушу', 'text', val.check, { req: 1, attrs: ' inputmode="numeric" autocomplete="off"' })}${fld('techLog', 'Номер ТБЖ', 'text', val.techLog, { req: 1, hint: 'Підставляється з попереднього запису' })}</div></div>
+    <div class="fs" style="margin-top:14px"><h4>Підпис — повноваження *</h4><div class="fields">
+      ${fld('camoAuth', 'САМО', 'select', val.camoAuth, { full: 1, options: authOpts('CAMO', val.date, val.camoAuth) })}
+      ${fld('amoAuth', 'Організація з ТО та ремонту', 'select', val.amoAuth, { full: 1, options: authOpts('AMO', val.date, val.amoAuth), hint: 'Обов\'язково хоча б одне повноваження. Якщо в однієї особи обидва, ТОР підставиться сам.' })}</div></div>
+    ${e ? `<div class="fs" style="margin-top:14px"><h4>Причина уточнення *</h4>${fld('reason', 'Причина', 'textarea', '', { full: 1, req: 1 })}</div>` : ''}
+    </form>`,
+    foot: `<span class="small muted" style="align-self:center">* — обов'язкові поля</span><div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-e">${e ? 'Внести уточнення' : 'Внести запис'}</button></div>` });
+  const f = $('#f-e', d);
+  hmBind(f); pickBind(f, 'motive'); pickBind(f, 'work'); const shows = { wo: segBind(f, 'wo'), crs: segBind(f, 'crs') }; digitsOnly(f.landings); digitsOnly(f.check);
+  const getHm = k => { if (!f[k + '_h']) return null; const h = f[k + '_h'].value.trim(), m = f[k + '_m'].value.trim(); return h || m ? (+h || 0) * 60 + (+m || 0) : null; };
+  const hintFld = (k, txt) => { const x = $(`[data-f="${k}"] .hint`, f) || (() => { const s = document.createElement('span'); s.className = 'hint'; $(`[data-f="${k}"] .msg`, f).before(s); return s; })(); x.innerHTML = txt; };
+  const compute = () => {
+    const date = f.date.value, { prev, next } = neighbours(date, e);
+    const tot = getHm('fhTotal'), mMx = getHm('mMx'), mMj = getHm('mMajor');
+    const man = { fhMx: mMx != null, fhMajor: mMj != null };
+    const r = derive(prev, tot, f.major.checked, man, { fhMx: mMx, fhMajor: mMj });
+    const cell = (lbl, v, manual, note, extra = '') => `<div class="${manual ? 'man' : v == null && note ? 'bad' : ''}"><span>${lbl}</span><b>${v == null ? '—' : hm(v)}</b><i>${manual ? 'внесено вручну' : v == null && note ? note : extra}</i></div>`;
+    $('#calcbox', d).innerHTML = cell('З останнього ТО', r.fhMx, man.fhMx, prev ? '' : 'попереднього запису немає', prev?.fhTotal != null && tot != null ? `${hm(tot)} − ${hm(prev.fhTotal)}` : '')
+      + cell('Загальне', tot, false, '', 'вносить оператор')
+      + cell('Після базового ТО', r.fhMajor, man.fhMajor, prev ? 'базового ТО ще не було' : 'попереднього запису немає', r.base != null ? (prev?.major ? '0:00 + з останнього ТО' : `${hm(r.base)} + з останнього ТО`) + (f.major.checked ? ' · між базовими ТО' : '') : '');
+    hintFld('fhTotal', [prev ? `попередній запис (${fd(prev.date)}): ${hm(prev.fhTotal) || '—'}` : '', next ? `наступний (${fd(next.date)}): ${hm(next.fhTotal) || '—'}` : ''].filter(Boolean).join(' · '));
+    hintFld('landings', [prev ? `попередній: ${prev.landings ?? '—'}` : '', next ? `наступний: ${next.landings ?? '—'}` : ''].filter(Boolean).join(' · ') + ' · лише цифри, не менше попереднього');
+    hintFld('check', [prev ? `попередній: ${esc(prev.check || '—')}` : '', next ? `наступний: ${esc(next.check || '—')}` : ''].filter(Boolean).join(' · ') + ' · лише цифри, не менше попереднього');
+    return { prev, next, tot, man, r };
+  };
+  let mdTouched = !!e;
+  const syncMD = () => { if (mdTouched) return; for (const k of ['wo', 'crs']) { f[k + '_mm'].value = f.date.value.slice(5, 7); f[k + '_dd'].value = f.date.value.slice(8, 10); shows[k](); } };
+  $$('[name$="_mm"],[name$="_dd"]', f).forEach(x => x.addEventListener('keydown', () => { mdTouched = true; }));
+  f.date.addEventListener('change', syncMD);
+  f.addEventListener('input', compute); f.addEventListener('change', compute);
+  compute();
+  f.camoAuth.addEventListener('change', () => {
+    const a = authById(f.camoAuth.value);
+    if (a && !f.amoAuth.value) { const same = D.auths.find(x => x.org === 'AMO' && x.holder === a.holder && x.active); if (same && [...f.amoAuth.options].some(o => o.value === same.id)) f.amoAuth.value = same.id; }
+  });
+  f.addEventListener('submit', ev => {
+    ev.preventDefault();
+    const c = compute();
+    const raw = hmCollect(formVals(f));
+    const err = {}, out = {};
+    // дата
+    out.date = raw.date;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(raw.date || '')) err.date = 'Вкажіть дату';
+    else if (raw.date > todayIso()) err.date = 'Дата не може бути в майбутньому';
+    else if (!can('correct') && last && raw.date < last.date) err.date = `Не раніше ${fd(last.date)} (дата останнього запису). Запис заднім числом вносить адміністратор.`;
+    // напрацювання і посадки — не менше попереднього і не більше наступного запису
+    const tot = parseHours(raw.fhTotal);
+    if (tot == null) err.fhTotal = 'Вкажіть загальне напрацювання';
+    else if (Number.isNaN(tot)) err.fhTotal = 'Хвилини — від 00 до 59';
+    else if (c.prev?.fhTotal != null && tot < c.prev.fhTotal) err.fhTotal = `Не менше ${hm(c.prev.fhTotal)} (запис від ${fd(c.prev.date)})`;
+    else if (c.next?.fhTotal != null && tot > c.next.fhTotal) err.fhTotal = `Не більше ${hm(c.next.fhTotal)} (наступний запис від ${fd(c.next.date)})`;
+    out.fhTotal = Number.isNaN(tot) ? null : tot;
+    const ld = String(raw.landings || '').trim();
+    if (!ld) err.landings = 'Вкажіть кількість посадок';
+    else if (!/^\d+$/.test(ld)) err.landings = 'Лише цифри';
+    else if (c.prev?.landings != null && +ld < +c.prev.landings) err.landings = `Не менше ${c.prev.landings} (запис від ${fd(c.prev.date)})`;
+    else if (c.next?.landings != null && +ld > +c.next.landings) err.landings = `Не більше ${c.next.landings} (наступний запис від ${fd(c.next.date)})`;
+    out.landings = /^\d+$/.test(ld) ? +ld : null;
+    // ручне коригування
+    out.major = !!f.major.checked;
+    out.man = c.man;
+    for (const [k, mk] of [['mMx', 'fhMx'], ['mMajor', 'fhMajor']]) { const x = parseHours(raw[k]); if (Number.isNaN(x)) err[k] = 'Хвилини — від 00 до 59'; if (c.man[mk]) out[mk] = x; }
+    if (!c.man.fhMx) out.fhMx = c.r.fhMx;
+    if (!c.man.fhMajor) out.fhMajor = c.r.fhMajor;
+    if (out.fhMx == null && !err.fhTotal) { err.mMx = c.prev ? 'Не вдалося розрахувати — внесіть вручну' : 'Перший запис: внесіть напрацювання з останнього ТО вручну'; }
+    // тексти
+    const pm = pickCollect(raw, 'motive'), pw = pickCollect(raw, 'work');
+    if (pm.err) err[pm.errKey] = pm.err;
+    if (pw.err) err[pw.errKey] = pw.err;
+    out.motive = pm.text; out.work = pw.text;
+    // WO, CRS
+    const woOn = f.wo_on.checked, crsOn = f.crs_on.checked;          // WO і CRS — необов'язкові: позначкою можна вимкнути
+    const wo = segVals(f, 'wo'), we = woOn ? checkCode('wo', wo) : [];
+    if (we.length) err.wo = 'WO: ' + we.join(', ');
+    out.wo = woOn ? buildCode('wo', wo) : '';
+    out.crsType = f.crsType.value === 'pilot' ? 'pilot' : 'tech';
+    const cr = segVals(f, 'crs'), ce = crsOn ? checkCode(out.crsType, cr) : [];
+    if (ce.length) err.crs = 'CRS: ' + ce.join(', ');
+    out.crs = crsOn ? buildCode(out.crsType, cr) : '';
+    if (!can('year')) { if (woOn && wo.yy !== curYY() && wo.yy !== parseCode('wo', e?.wo)?.yy) err.wo = `Рік — лише поточний (${curYY()})`; if (crsOn && cr.yy !== curYY() && cr.yy !== parseCode(e?.crsType || 'tech', e?.crs)?.yy) err.crs = `Рік — лише поточний (${curYY()})`; }
+    // контрольний аркуш, ТБЖ
+    const ck = String(raw.check || '').trim();
+    if (!ck) err.check = 'Вкажіть номер контрольного аркушу';
+    else if (!/^\d+$/.test(ck)) err.check = 'Лише цифри';
+    else if (/^\d+$/.test(c.prev?.check || '') && +ck < +c.prev.check) err.check = `Не менше ${c.prev.check} (запис від ${fd(c.prev.date)})`;
+    else if (/^\d+$/.test(c.next?.check || '') && +ck > +c.next.check) err.check = `Не більше ${c.next.check} (наступний запис)`;
+    out.check = ck;
+    out.techLog = String(raw.techLog || '').trim();
+    if (!out.techLog) err.techLog = 'Вкажіть номер ТБЖ';
+    // підпис
+    for (const [k, org] of [['camoAuth', 'CAMO'], ['amoAuth', 'AMO']]) {
+      out[k] = raw[k] || null;
+      const a = authById(out[k]);
+      if (out[k] && (!a || a.org !== org)) err[k] = 'Оберіть зі списку';
+      else if (a && out.date && ((a.from && out.date < a.from) || (a.to && out.date > a.to))) err[k] = `Повноваження ${a.code} не чинне на ${fd(out.date)}`;
+    }
+    if (!out.camoAuth && !out.amoAuth) err.camoAuth = 'Оберіть повноваження (підпис)';
+    const reason = String(raw.reason || '').trim();
+    if (e && !reason) err.reason = 'Вкажіть причину уточнення';
+    if (pm.tolib && !EN_RE.test(pm.text)) err.motive = 'До стандартних — лише англійською та цифрами';
+    if (pw.tolib && !EN_RE.test(pw.text)) err.work = 'До стандартних — лише англійською та цифрами';
+    if (!showErr(f, err)) return;
+    let added = 0;
+    if (pm.tolib && libAdd('motive', pm.text)) added++;
+    if (pw.tolib && libAdd('work', pw.text)) added++;
+    if (!e) { const { rc } = addEntry(out); toast('Запис внесено' + (rc.length ? ` · перераховано записів: ${rc.length}` : '') + (added ? ' · додано до стандартних' : '')); }
+    else { const r = editEntry(e, out, reason); toast(r === null ? 'Нічого не змінено' : `Внесено уточнення № ${e.rev}${r.rc.length ? ` · перераховано записів: ${r.rc.length}` : ''}`); if (r === null && added) changed(); }
+    d.close();
+  });
+  setTimeout(() => (e ? f.date : f.landings).focus(), 30);
+}
+function entryDetails(e) {
+  const hist = D.history.filter(h => h.entry === e.id);
+  const kinds = { create: 'Внесено', change: 'Уточнення', void: 'Анулювання', recalc: 'Перерахунок', fix: 'Уточнено до друку', print: 'Роздруковано' };
+  const p = LAY.pageOf[e.id];
+  const d = openDlg({ title: `Запис від ${fd(e.date)}`, sub: flags(e),
+    body: `${e.voided ? `<div class="note bad">Анульовано ${fdt(e.voidedAt)} (${esc(e.voidedBy)}): ${esc(e.voidReason)}. На сторінках не друкується.</div>` : ''}
+      <dl class="kv">${['landings', 'fhTotal', 'fhMx', 'major', 'fhMajor', 'motive', 'work', 'wo', 'crs', 'crsType', 'check', 'techLog'].map(k => `<dt>${F[k]}</dt><dd>${esc(fmtVal(k, e[k]))}${(k === 'fhMx' || k === 'fhMajor') && e.man?.[k] ? ' <span class="chip chg">вручну</span>' : ''}</dd>`).join('')}
+      <dt>Підпис</dt><dd>${sigHtml(e)}</dd><dt>Сторінка</dt><dd>${p != null ? `с. ${p}–${p + 1}${PS[p]?.print || PS[p + 1]?.print ? ' — потрібно передрукувати' : PS[p]?.printed ? ' — на папері актуальна' : ''}` : '—'}</dd>
+      ${can('settings') && ['motive', 'work'].some(k => e[k] && !splitStd(k, e[k]).std && EN_RE.test(e[k])) ? `<dt>Довідник</dt><dd>${['motive', 'work'].filter(k => e[k] && !splitStd(k, e[k]).std && EN_RE.test(e[k])).map(k => `<button class="btn sm" type="button" data-tolib="${k}">«${LIB_NAME[k]}» → до стандартних</button>`).join(' ')}</dd>` : ''}</dl>
+      <div class="fs"><h4>Історія</h4><div class="log" style="border:1px solid var(--line-soft);border-radius:10px">${hist.map(h => `<div class="log-i"><div><b>${fdt(h.ts)}</b><div class="small muted">${esc(h.by)}</div></div>
+        <div><b>${kinds[h.kind] || h.kind}${h.kind === 'change' || h.kind === 'void' ? ' № ' + h.rev : ''}</b>${h.reason ? `<div class="small">Причина: ${esc(h.reason)}</div>` : ''}
+        ${Object.keys(h.changes || {}).length ? `<ul>${Object.entries(h.changes).filter(([k]) => k !== 'man').map(([k, [a, b]]) => `<li>${esc(F[k] || k)}: <s>${esc(fmtVal(k, a))}</s> → ${esc(fmtVal(k, b))}</li>`).join('')}</ul>` : ''}</div></div>`).join('')}</div></div>`,
+    foot: `${!e.voided && can('correct') ? '<button class="btn danger" type="button" data-a="void">Анулювати</button>' : '<span></span>'}<div class="r"><button class="btn" type="button" data-close>Закрити</button>${!e.voided && can('correct') ? '<button class="btn primary" type="button" data-a="edit">Уточнити</button>' : ''}</div>` });
+  $('[data-a="edit"]', d)?.addEventListener('click', () => entryForm(e));
+  $$('[data-tolib]', d).forEach(b => b.addEventListener('click', () => { if (libAdd(b.dataset.tolib, e[b.dataset.tolib])) { changed(); toast('Додано до стандартних'); } b.remove(); }));
+  $('[data-a="void"]', d)?.addEventListener('click', guard('correct', () => {
+    const d2 = openDlg({ title: 'Анулювати запис', sub: `від ${fd(e.date)}`,
+      body: `<div class="note bad">Запис не видаляється з файла: він лишається в «Записах» і журналі, але зникає зі сторінок. Наступні записи буде перераховано, а змінені сторінки — позначено для передруку.</div><form id="f-v" class="fields">${fld('reason', 'Причина анулювання', 'textarea', '', { full: 1, req: 1 })}</form>`,
+      foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn danger" type="submit" form="f-v">Анулювати</button></div>` });
+    $('#f-v', d2).addEventListener('submit', ev => { ev.preventDefault(); const r = ev.target.reason.value.trim(); if (!showErr(ev.target, r ? {} : { reason: 'Причина анулювання обов\'язкова' })) return; voidEntry(e, r); d2.close(); toast('Запис анульовано'); });
+  }));
+}
+function identForm() {
+  if (!can('settings')) return;
+  const id = D.ident, locked = Object.values(D.pages).some(p => p.pr);
+  const d = openDlg({ title: 'Реквізити формуляра', body: `<form id="f-i" class="fields">${fld('title', 'Назва', 'text', id.title, { full: 1 })}${fld('camo', 'Ідентифікація САМО', 'text', id.camo, { req: 1 })}
+    ${fld('type', 'Тип ПС', 'text', id.type, { req: 1 })}${fld('serial', 'Заводський номер', 'text', id.serial, { req: 1, hint: 'Перші 4 цифри WO і CRS — номер борта з заводського номера' })}${fld('reg', 'Бортовий номер', 'text', id.reg, { req: 1 })}
+    ${fld('startPage', 'Номер першої сторінки', 'number', id.startPage, { req: 1, attrs: (locked ? ' disabled' : '') + ' min="1" inputmode="numeric"', hint: locked ? 'Сторінки вже роздруковано — номер не змінюється' : 'Ліва сторінка першого розвороту' })}
+    ${fld('leaf', 'Зворотні сторінки на аркуші паперу', 'select', id.leaf, { full: 1, options: [['book', 'Книжкова нумерація: 1 і 2, 3 і 4… (зворотна до 2 — 1, до 3 — 4)'], ['spread', `На одному аркуші ${id.startPage} і ${id.startPage + 1}, ${id.startPage + 2} і ${id.startPage + 3}…`]] })}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-i">Зберегти</button></div>` });
+  $('#f-i', d).addEventListener('submit', ev => {
+    ev.preventDefault(); const v = formVals(ev.target); const err = {};
+    for (const k of ['camo', 'type', 'serial', 'reg']) if (!String(v[k] || '').trim()) err[k] = 'Обов\'язкове поле';
+    if (String(v.serial || '').replace(/\D/g, '').length < 4) err.serial = 'Потрібно щонайменше 4 цифри (для WO і CRS)';
+    if (!locked && !(+v.startPage >= 1)) err.startPage = 'Ціле число від 1';
+    if (!showErr(ev.target, err)) return;
+    const nv = { ...id, title: v.title.trim() || id.title, camo: v.camo.trim(), type: v.type.trim(), serial: v.serial.trim(), reg: v.reg.trim(), leaf: v.leaf, startPage: locked ? id.startPage : Math.round(+v.startPage) };
+    const ch = {}; for (const k of Object.keys(nv)) if (nv[k] !== id[k]) ch[k] = [id[k], nv[k]];
+    if (Object.keys(ch).length) { D.ident = nv; logH('ident', null, ch); changed(); }
+    d.close();
+  });
+}
+function holderForm(h) {
+  if (!can('settings')) return;
+  const d = openDlg({ title: h ? 'Змінити особу' : 'Нова особа', body: `<form id="f-h" class="fields">${fld('name', 'Прізвище (як у графі «Підпис»)', 'text', h?.name, { full: 1, req: 1 })}${fld('position', 'Посада', 'text', h?.position, { full: 1 })}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-h">Зберегти</button></div>` });
+  $('#f-h', d).addEventListener('submit', ev => { ev.preventDefault(); const v = formVals(ev.target); if (!showErr(ev.target, v.name.trim() ? {} : { name: 'Вкажіть прізвище' })) return;
+    if (h) { logH('auth', null, { 'особа': [h.name, v.name.trim()] }); h.name = v.name.trim(); h.position = v.position.trim(); }
+    else { D.holders.push({ id: uid(), name: v.name.trim(), position: v.position.trim() }); logH('auth', null, { 'нова особа': ['', v.name.trim()] }); }
+    changed(); d.close(); });
+}
+function authForm(h, a) {
+  if (!can('settings')) return;
+  const used = a && D.entries.some(e => e.camoAuth === a.id || e.amoAuth === a.id);
+  const d = openDlg({ title: a ? 'Повноваження' : 'Нове повноваження', sub: esc(h.name),
+    body: `${used ? '<div class="note">Повноваження вже використано у записах: номер і організацію змінити не можна. Щоб замінити — вкажіть «Чинне до» і додайте нове.</div>' : ''}
+    <form id="f-a" class="fields">${fld('org', 'Організація', 'select', a?.org || (D.auths.some(x => x.holder === h.id && x.org === 'CAMO') ? 'AMO' : 'CAMO'), { full: 1, options: [['CAMO', 'САМО — управління підтриманням льотної придатності'], ['AMO', 'Організація з технічного обслуговування та ремонту']] })}
+    ${fld('code', 'Номер повноваження', 'text', a?.code, { req: 1, hint: 'Напр. 26САМО-001 або 26ОАЕ-19' })}${fld('scope', 'Обсяг (необов\'язково)', 'text', a?.scope)}
+    ${fld('from', 'Чинне з', 'date', a?.from)}${fld('to', 'Чинне до', 'date', a?.to)}
+    ${a ? `<label class="fld check full"><input type="checkbox" name="active"${a.active ? ' checked' : ''}> <span>Діє (можна обирати в нових записах)</span></label>` : ''}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-a">Зберегти</button></div>` });
+  const f = $('#f-a', d);
+  if (used) { f.org.disabled = true; f.code.disabled = true; }
+  f.addEventListener('submit', ev => {
+    ev.preventDefault(); const v = formVals(f); const err = {};
+    const code = (used ? a.code : v.code || '').trim(), org = used ? a.org : v.org;
+    if (!code) err.code = 'Вкажіть номер';
+    else if (D.auths.some(x => x !== a && x.org === org && x.code === code)) err.code = 'Таке повноваження вже є';
+    if (v.from && v.to && v.to < v.from) err.to = 'Раніше за «Чинне з»';
+    if (!showErr(f, err)) return;
+    const nv = { org, code, scope: (v.scope || '').trim(), from: v.from || '', to: v.to || '', active: a ? !!v.active : true };
+    if (a) { const ch = {}; for (const k of Object.keys(nv)) if (nv[k] !== a[k]) ch[k] = [a[k], nv[k]]; Object.assign(a, nv); if (Object.keys(ch).length) logH('auth', null, { [`${h.name} ${code}`]: ['', JSON.stringify(ch)] }); }
+    else { D.auths.push({ id: uid(), holder: h.id, ...nv }); logH('auth', null, { [`${h.name}`]: ['', `${ORG[org]} ${code}`] }); }
+    changed(); d.close();
+  });
+}
+
+/* =====================================================================
+   Друк і PDF
+   ===================================================================== */
+let lastPrint = null;
+function printDialog(intent = 'print') {
+  if (!can('print')) return toast('Недостатньо повноважень');
+  const need = needPrintList(LAY, PS), pdfNeed = LAY.pages.filter(p => PS[p.no].pdf).map(p => p.no);
+  const allNos = LAY.pages.map(p => p.no);
+  const full = intent === 'pdf';
+  const def = full ? 'all' : need.length ? 'need' : 'range';
+  const d = openDlg({ title: full ? 'Зберегти PDF' : 'Друк / PDF', sub: `${esc(D.ident.type)} № ${esc(D.ident.serial)} · борт ${esc(D.ident.reg)}`,
+    body: `<div class="note">${full ? 'У вікні друку оберіть принтер <b>«Зберегти як PDF»</b>.' : 'Відкриється вікно друку. Для паперу оберіть принтер, для PDF — «Зберегти як PDF».'} Масштаб 100 %, поля «Немає».</div>
+    <form id="f-p" class="fs"><div class="radios" style="flex-direction:column;align-items:flex-start">
+      <label><input type="radio" name="what" value="need"${def === 'need' ? ' checked' : ''}${need.length ? '' : ' disabled'}> Потрібні для друку${need.length ? `: с. ${need.join(', ')} (з зворотними)` : ' — немає'}</label>
+      <label><input type="radio" name="what" value="pdfneed"${pdfNeed.length ? '' : ' disabled'}> Потрібні для PDF${pdfNeed.length ? `: с. ${pdfNeed.join(', ')}` : ' — немає'}</label>
+      <label><input type="radio" name="what" value="all"${def === 'all' ? ' checked' : ''}> Усі сторінки (${allNos[0]}–${allNos[allNos.length - 1]})</label>
+      <label><input type="radio" name="what" value="range"${def === 'range' ? ' checked' : ''}> Діапазон</label></div>
+      <div class="fields">${fld('from', 'З сторінки', 'number', allNos[0], { attrs: ' inputmode="numeric"' })}${fld('to', 'По сторінку', 'number', allNos[allNos.length - 1], { attrs: ' inputmode="numeric"' })}
+      ${fld('mode', 'Аркуш', 'select', 'a5', { full: 1, options: [['a5', 'A5 альбомна — кожна сторінка окремо, як у формулярі'], ['a4', 'A4 книжкова — дві сторінки на аркуші (одна над одною)']] })}</div>
+      ${can('correct') ? '<label class="fld check"><input type="checkbox" name="annex"> <span>Додати службові сторінки: реєстр змін і відомості про повноваження</span></label>' : ''}</form>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-p">${ic('print')} Відкрити вікно друку</button></div>` });
+  $('#f-p', d).addEventListener('submit', ev => {
+    ev.preventDefault(); const v = formVals(ev.target);
+    let nos = v.what === 'need' ? need : v.what === 'pdfneed' ? pdfNeed : v.what === 'all' ? allNos : allNos.filter(n => n >= (+v.from || 0) && n <= (+v.to || 1e9));
+    if (!nos.length) return showErr(ev.target, { from: 'У цьому діапазоні немає сторінок' });
+    d.close();
+    doPrint(nos, v.mode, !!v.annex, intent);
+  });
+}
+function doPrint(nos, mode, annex, intent) {
+  const pages = nos.map(n => { const p = pageByNo(LAY, n); return pageHtml(LAY, p.s, p.side); });
+  if (annex) pages.push(...annexPages(LAY));
+  let html = '';
+  if (mode === 'a4') {
+    for (let i = 0; i < pages.length; i += 2) html += `<div class="sheet">${pages[i]}${pages[i + 1] || ''}<div class="cut"></div></div>`;
+    $('#page-size').textContent = '@page { size: 210mm 297mm; margin: 0; }';
+  } else { html = pages.join(''); $('#page-size').textContent = '@page { size: 210mm 148mm; margin: 0; }'; }
+  $('#print-root').innerHTML = html;
+  lastPrint = { nos, intent, sigs: Object.fromEntries(nos.map(n => [n, pageByNo(LAY, n).sig])) };
+  setTimeout(() => { window.print(); }, 60);
+}
+window.addEventListener('afterprint', () => {
+  $('#print-root').innerHTML = '';
+  if (!lastPrint) return;
+  const p = lastPrint; lastPrint = null;
+  if (p.intent === 'sugg') return;
+  const d = openDlg({ title: 'Друк завершено?', sub: `Сторінки ${p.nos.join(', ')}`,
+    body: `<form id="f-ap" class="fs"><label class="fld check"><input type="checkbox" name="paper"${p.intent === 'print' ? ' checked' : ''}> <span><b>Роздруковано на папір</b> — зняти позначку «потрібен друк» з цих сторінок</span></label>
+      <label class="fld check"><input type="checkbox" name="pdf"${p.intent === 'pdf' ? ' checked' : ''}> <span><b>Збережено PDF</b> — зняти позначку «потрібно зберегти PDF» з цих сторінок</span></label></form>
+      <div class="small muted">Якщо друк скасовано, просто закрийте це вікно.</div>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Закрити</button><button class="btn go" type="submit" form="f-ap">Підтвердити</button></div>` });
+  $('#f-ap', d).addEventListener('submit', ev => {
+    ev.preventDefault();
+    const f = $('#f-ap', d), paper = f.paper.checked, pdf = f.pdf.checked;
+    d.close();
+    if (!paper && !pdf) return;
+    for (const n of p.nos) {
+      const rec = D.pages[n] = D.pages[n] || {};
+      if (paper) { rec.pr = p.sigs[n]; rec.prAt = nowIso(); }
+      if (pdf) { rec.pdf = p.sigs[n]; rec.pdfAt = nowIso(); }
+    }
+    if (paper) logH('print', null, { 'сторінки': ['', p.nos.join(', ')] });
+    if (pdf) { D.events.pdfAt = nowIso(); logH('pdf', null, { 'сторінки': ['', p.nos.join(', ')] }); }
+    changed(); toast('Позначено');
+  });
+});
+
+/* =====================================================================
+   Пропозиції: скріншот екрана + червоні позначки + опис
+   ===================================================================== */
+async function captureScreen() {
+  // 1) зображення сторінки засобами браузера (без інтернету)
+  try {
+    const w = innerWidth, h = innerHeight;
+    const css = $$('style').map(s => s.textContent).join('\n');
+    const src = $('.wrap'), clone = src.cloneNode(true);
+    const a = $$('input,textarea,select', src), b = $$('input,textarea,select', clone);
+    a.forEach((x, i) => { const y = b[i]; if (!y) return; if (x.type === 'checkbox' || x.type === 'radio') { if (x.checked) y.setAttribute('checked', ''); } else if (x.tagName === 'SELECT') { $$('option', y).forEach((o, j) => { if (j === x.selectedIndex) o.setAttribute('selected', ''); }); } else if (x.tagName === 'TEXTAREA') y.textContent = x.value; else y.setAttribute('value', x.value); });
+    const cs = getComputedStyle(document.documentElement);
+    const vars = [...document.styleSheets].flatMap(sh => { try { return [...sh.cssRules]; } catch { return []; } }).map(r => r.cssText).join(' ').match(/--[\w-]+(?=\s*:)/g) || [];
+    const qa = t => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    const varCss = qa([...new Set(vars)].map(v => `${v}:${cs.getPropertyValue(v)}`).join(';'));
+    const xml = new XMLSerializer().serializeToString(clone);
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="${varCss};width:${w}px;height:${h}px;overflow:hidden;background:${qa(cs.getPropertyValue('--bg'))};color:${qa(cs.getPropertyValue('--text'))};font:14px/1.5 ${qa(cs.getPropertyValue('--ui'))}"><style>${css.replace(/<\/?style>/g, '').replace(/&/g, '&amp;').replace(/</g, '&lt;')}</style><div style="transform:translateY(${-scrollY}px)">${xml}</div></div></foreignObject></svg>`;
+    const img = new Image(); img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    await img.decode();
+    const c = document.createElement('canvas'), k = Math.min(2, devicePixelRatio || 1);
+    c.width = w * k; c.height = h * k; const g = c.getContext('2d'); g.scale(k, k); g.drawImage(img, 0, 0);
+    c.toDataURL('image/png').slice(0, 30);   // перевірка, що зображення можна зберегти
+    return c;
+  } catch { /* далі — спроба через знімок екрана */ }
+  // 2) знімок екрана системними засобами (ПК: Chrome, Edge)
+  try {
+    if (!navigator.mediaDevices?.getDisplayMedia) throw 0;
+    const st = await navigator.mediaDevices.getDisplayMedia({ video: true, preferCurrentTab: true });
+    const v = document.createElement('video'); v.srcObject = st; v.muted = true; await v.play();
+    await new Promise(r => setTimeout(r, 300));
+    const c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight; c.getContext('2d').drawImage(v, 0, 0);
+    st.getTracks().forEach(t => t.stop());
+    return c;
+  } catch { return null; }
+}
+async function suggestDialog() {
+  if (isGuest()) return;
+  $('#b-idea').disabled = true;
+  const shot = await captureScreen();
+  $('#b-idea').disabled = false;
+  const where = { entries: 'Записи', pages: 'Сторінки', auth: 'Повноваження', lib: 'Стандартні роботи', admin: 'Адміністрування', sugg: 'Пропозиції', log: 'Журнал змін', about: 'Файл і версія' }[TAB];
+  const d = openDlg({ title: 'Пропозиція', sub: `Розділ «${where}» · ${esc(userName())}`, wide: true,
+    body: `<div class="draw-tools"><span class="dot" aria-hidden="true"></span><span class="small">Малюйте червоним по зображенню, щоб показати проблему.</span>
+      <button class="btn sm" type="button" data-a="undo">Скасувати лінію</button><button class="btn sm" type="button" data-a="clear">Стерти позначки</button>
+      <label class="btn sm">Інше зображення…<input type="file" accept="image/*" hidden data-a="file"></label></div>
+      <div class="draw-wrap"><canvas id="cv"></canvas></div>
+      ${shot ? '' : '<div class="note warn">Браузер не дозволив зробити знімок автоматично. Додайте знімок екрана кнопкою «Інше зображення…» або опишіть проблему словами.</div>'}
+      <form id="f-s" class="fields">${fld('text', 'Опис проблеми або пропозиції', 'textarea', '', { full: 1, req: 1 })}</form>`,
+    foot: `<span class="small muted" style="align-self:center">Пропозиція зберігається у файлі формуляра — після неї збережіть файл.</span><div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="submit" form="f-s">Надіслати пропозицію</button></div>` });
+  const cv = $('#cv', d), g = cv.getContext('2d');
+  let base = shot, strokes = [], cur = null;
+  const setBase = c => { base = c; cv.width = c ? c.width : 1200; cv.height = c ? c.height : 600; redraw(); };
+  const redraw = () => {
+    g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height);
+    if (base) g.drawImage(base, 0, 0, cv.width, cv.height);
+    g.strokeStyle = '#e0201b'; g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = Math.max(3, cv.width / 300);
+    for (const s of strokes) { g.beginPath(); s.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y)); g.stroke(); }
+  };
+  const pos = ev => { const r = cv.getBoundingClientRect(); return [(ev.clientX - r.left) * cv.width / r.width, (ev.clientY - r.top) * cv.height / r.height]; };
+  cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); cur = [pos(ev)]; strokes.push(cur); redraw(); });
+  cv.addEventListener('pointermove', ev => { if (!cur) return; cur.push(pos(ev)); redraw(); });
+  cv.addEventListener('pointerup', () => { cur = null; });
+  $('[data-a="undo"]', d).addEventListener('click', () => { strokes.pop(); redraw(); });
+  $('[data-a="clear"]', d).addEventListener('click', () => { strokes = []; redraw(); });
+  $('[data-a="file"]', d).addEventListener('change', async ev => {
+    const fl = ev.target.files[0]; if (!fl) return;
+    const im = new Image(); im.src = URL.createObjectURL(fl); await im.decode();
+    const c = document.createElement('canvas'); c.width = im.naturalWidth; c.height = im.naturalHeight; c.getContext('2d').drawImage(im, 0, 0);
+    strokes = []; setBase(c);
+  });
+  setBase(shot);
+  $('#f-s', d).addEventListener('submit', ev => {
+    ev.preventDefault(); const t = ev.target.text.value.trim();
+    if (!showErr(ev.target, t ? {} : { text: 'Опишіть проблему або пропозицію' })) return;
+    const maxW = 1400, k = Math.min(1, maxW / cv.width);
+    const out = document.createElement('canvas'); out.width = Math.round(cv.width * k); out.height = Math.round(cv.height * k);
+    out.getContext('2d').drawImage(cv, 0, 0, out.width, out.height);
+    D.sugg.push({ id: uid(), at: nowIso(), by: userName(), tab: where, text: t, img: base || strokes.length ? out.toDataURL('image/jpeg', .78) : '', status: 'new' });
+    logH('sugg', null, { 'нова пропозиція': ['', t.slice(0, 80)] });
+    changed(); d.close(); toast('Пропозицію збережено. Збережіть файл.');
+  });
+}
+function viewSugg() {
+  const ex = can('suggest');
+  const list = [...D.sugg].reverse();
+  $('#view').innerHTML = `<section class="panel"><div class="panel-h"><div><h2>Пропозиції</h2><div class="small muted">Знімки екрана з позначками і коментарі користувачів. ${ex ? 'Вивантаження у PDF — кнопка праворуч.' : 'Режим перегляду.'}</div></div>
+    <div class="actions">${ex && list.length ? `<button class="btn sm primary" type="button" data-act="sugg-pdf">${ic('print')} Файл «Пропозиції» у PDF</button>` : ''}<button class="btn sm" type="button" data-act="sugg-new">${ic('idea')} Нова пропозиція</button></div></div>
+    <div>${list.map((s, i) => `<div class="sugg"><div>${s.img ? `<img src="${s.img}" alt="Знімок екрана до пропозиції ${list.length - i}" data-zoom="${s.id}">` : '<div class="small faint">без зображення</div>'}</div>
+      <div><div class="meta">№ ${list.length - i} · ${fdt(s.at)} · ${esc(s.by)} · розділ «${esc(s.tab)}» ${s.status === 'done' ? '<span class="chip ok">розглянуто</span>' : '<span class="chip warn">нова</span>'}</div>
+      <div class="txt">${esc(s.text)}</div>${ex ? `<div class="actions" style="margin-top:8px"><button class="btn sm" type="button" data-act="sugg-st" data-i="${s.id}">${s.status === 'done' ? 'Повернути в нові' : 'Позначити розглянутою'}</button></div>` : ''}</div></div>`).join('')
+    || '<div class="empty"><b>Пропозицій ще немає</b>Натисніть «Пропозиція» вгорі екрана — програма зробить знімок, на якому можна позначити проблему червоним.</div>'}</div></section>`;
+}
+function suggPdf() {
+  if (!can('suggest')) return;
+  const id = D.ident, list = D.sugg;
+  const html = `<div class="sheet-p"><h2>Пропозиції щодо електронного формуляра</h2><div class="sm">${esc(id.type)} зав. № ${esc(id.serial)} борт. № ${esc(id.reg)} · САМО ${esc(id.camo)} · сформовано ${fdt(nowIso())} · усього ${list.length}</div>
+    ${list.map((s, i) => `<div class="it"><div class="m"><b>№ ${i + 1}</b> · ${fdt(s.at)} · ${esc(s.by)} · розділ «${esc(s.tab)}» · ${s.status === 'done' ? 'розглянуто' : 'нова'}</div>${s.img ? `<img src="${s.img}" alt="">` : ''}<div class="t">${esc(s.text)}</div></div>`).join('')}</div>`;
+  $('#print-root').innerHTML = html;
+  $('#page-size').textContent = '@page { size: 210mm 297mm; margin: 0; }';
+  lastPrint = { intent: 'sugg', nos: [] };
+  setTimeout(() => window.print(), 80);
+}
+
+/* =====================================================================
+   Файл: збереження з даними, відкриття, резервні копії
+   ===================================================================== */
+function fileName(suffix = '') { const id = D.ident; return `Формуляр_${id.type}_${id.serial}_борт${id.reg}${suffix}`.replace(/[\\/:*?"<>|\s]+/g, '_'); }
+function buildHtml() {
+  const json = JSON.stringify(D).replace(/</g, '\\u003c');
+  const re = /(<script type="application\/json" id="fm-data">)[\s\S]*?(<\/script>)/;
+  return SOURCE.replace(re, (m, a, b) => a + json + b);
+}
+function download(name, text, type) {
+  const blob = new Blob([text], { type });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+}
+async function saveFile() {
+  if (isGuest()) return;
+  D.events.fileSavedAt = nowIso();
+  const html = buildHtml();
+  try {
+    if (fileHandle && fileHandle.createWritable) {
+      if ((await fileHandle.queryPermission?.({ mode: 'readwrite' })) !== 'granted' && (await fileHandle.requestPermission?.({ mode: 'readwrite' })) !== 'granted') throw new Error('no-permission');
+      const w = await fileHandle.createWritable(); await w.write(html); await w.close();
+      dirty = false; autosave(); renderAll(); toast(`Збережено у файл ${fileHandle.name}`); return;
+    }
+    if (window.showSaveFilePicker) {
+      const h = await window.showSaveFilePicker({ suggestedName: fileName() + '.html', types: [{ description: 'Формуляр (HTML)', accept: { 'text/html': ['.html'] } }] });
+      const w = await h.createWritable(); await w.write(html); await w.close();
+      fileHandle = h; dirty = false; autosave(); renderAll(); toast('Збережено. Надалі файл зберігатиметься на місці.'); return;
+    }
+  } catch (e) { if (e.name === 'AbortError') { D.events.fileSavedAt = null; return; } }
+  download(fileName() + '.html', html, 'text/html');
+  dirty = false; autosave(); renderAll();
+  toast('Файл завантажено. Замініть ним попередній файл формуляра.');
+}
+function saveBackup() {
+  if (isGuest()) return;
+  D.events.backupAt = nowIso(); D.events.fileSavedAt = D.events.fileSavedAt || nowIso();
+  download(fileName(`_копія_${todayIso()}`) + '.html', buildHtml(), 'text/html');
+  autosave(); renderAll(); toast('Резервну копію завантажено — перенесіть її на флешку або інший ПК');
+}
+function exportJson() { if (!isGuest()) download(fileName(`_дані_${todayIso()}`) + '.json', JSON.stringify({ ...D, users: undefined }, null, 1), 'application/json'); }
+function exportCsv() {
+  if (isGuest()) return;
+  const q = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+  const head = ['№', 'Сторінка', 'Дата', 'Напрацювання з останнього ТО', 'Напрацювання загальне', 'Напрацювання після базового ТО', 'Базове ТО', 'Посадки', 'Підстава для ТО', 'Що зроблено', 'WO', 'CRS', 'Контрольний аркуш', 'ТБЖ', 'САМО', 'ТОР', 'Зміна №', 'Анульовано', 'Вніс', 'Внесено'];
+  const rows = [...D.entries].sort(cmpE).map(e => [e.seq, LAY.pageOf[e.id] ?? '', fd(e.date), hm(e.fhMx), hm(e.fhTotal), hm(e.fhMajor), e.major ? 'так' : '', e.landings, e.motive, e.work, e.wo, e.crs, e.check, e.techLog,
+    authLabel(e.camoAuth), authLabel(e.amoAuth), e.rev || '', e.voided ? `${fd(e.voidedAt)}: ${e.voidReason}` : '', e.createdBy, fdt(e.createdAt)]);
+  download(fileName(`_${todayIso()}`) + '.csv', '﻿' + [head, ...rows].map(r => r.map(q).join(';')).join('\r\n'), 'text/csv');
+}
+async function openFile() {
+  if (!can('settings')) return toast('Недостатньо повноважень');
+  try {
+    if (window.showOpenFilePicker) {
+      const [h] = await window.showOpenFilePicker({ types: [{ description: 'Формуляр', accept: { 'text/html': ['.html', '.htm'], 'application/json': ['.json'] } }] });
+      const f = await h.getFile(); await importText(await f.text(), f.name, h.name.endsWith('.json') ? null : h); return;
+    }
+  } catch (e) { if (e.name === 'AbortError') return; }
+  $('#file-in').value = ''; $('#file-in').click();
+}
+$('#file-in').addEventListener('change', async e => { const f = e.target.files[0]; if (f) await importText(await f.text(), f.name, null); });
+async function importText(text, name, handle) {
+  let data;
+  try {
+    if (/^\s*[{[]/.test(text)) data = JSON.parse(text);
+    else { const m = text.match(/<script type="application\/json" id="fm-data">([\s\S]*?)<\/script>/); data = m && m[1].trim() ? JSON.parse(m[1]) : null; }
+    if (!data) throw new Error('У файлі немає даних формуляра (порожній шаблон).');
+    var hadUsers = Array.isArray(data.users) && data.users.length > 0;
+    data = migrate(data);
+  } catch (err) { openDlg({ title: 'Файл не відкрито', body: `<div class="note bad">${esc(name)}: ${esc(err.message)}</div>`, foot: '<div class="r"><button class="btn" type="button" data-close>Закрити</button></div>' }); return; }
+  const go = () => {
+    const keepMe = CU;
+    if (!hadUsers) data.users = D.users;            // дані зі старої версії або .json — користувачі лишаються з цього файла
+    D = data; fileHandle = handle; dirty = !handle; SPREAD = null;
+    finishMigration();
+    const same = D.users.find(u => u.login.toLowerCase() === keepMe.login.toLowerCase() && u.hash === keepMe.hash);
+    autosave();
+    if (same) { login(same); toast(handle ? `Відкрито ${name}` : `Дані з «${name}» перенесено. Збережіть файл.`); }
+    else { showLogin(); toast('Відкрито інший файл — увійдіть з обліковим записом цього файла'); }
+  };
+  const d = openDlg({ title: 'Відкрити інший файл?', body: `<div class="note${dirty ? ' warn' : ''}">Поточний формуляр (${esc(D.ident.type)} № ${esc(D.ident.serial)}, записів: ${D.entries.length}) буде замінено даними з «${esc(name)}» (${esc(data.ident.type)} № ${esc(data.ident.serial)}, записів: ${data.entries.length}).${dirty ? ' <b>У поточному є незбережені зміни.</b>' : ''}</div>`,
+    foot: `<div class="r"><button class="btn" type="button" data-close>Скасувати</button><button class="btn go" type="button" data-a="ok">Відкрити</button></div>` });
+  $('[data-a="ok"]', d).addEventListener('click', () => { d.close(); go(); });
+}
+/* Після перенесення зі старої версії: сторінки, роздруковані раніше, позначаються роздрукованими */
+function finishMigration() {
+  if (!D._printedLegacy) return;
+  const set = new Set(D._printedLegacy);
+  const L = layout();
+  for (const s of L.spreads) if (s.rows.length && s.rows.every(r => set.has(r.e.id))) {
+    for (const [no, sig] of [[s.left, s.sigL], [s.right, s.sigR]]) { D.pages[no] = { ...(D.pages[no] || {}), pr: sig, prAt: nowIso() }; if (D.events.pdfAt && D.events.pdfAt >= D.updatedAt) Object.assign(D.pages[no], { pdf: sig, pdfAt: D.events.pdfAt }); }
+  }
+  delete D._printedLegacy;
+}
+
+/* ---------- меню «⋮» ---------- */
+function moreMenu() {
+  const g = isGuest();
+  const d = openDlg({ title: 'Дії', body: `<div class="fs">
+    ${can('print') ? '<button class="btn" type="button" data-m="pdf">Зберегти PDF</button>' : ''}
+    ${g ? '' : '<button class="btn" type="button" data-m="backup">Резервна копія (файл з датою)</button><button class="btn" type="button" data-m="csv">Таблиця для Excel (.csv)</button>'}
+    ${can('settings') ? '<button class="btn" type="button" data-m="open">Відкрити інший файл або перенести дані в нову версію…</button><button class="btn" type="button" data-m="ident">Реквізити формуляра</button>' : ''}
+    <button class="btn" type="button" data-m="pw">Змінити мій пароль</button>
+    <button class="btn" type="button" data-m="theme">Тема: ${{ light: 'світла', dark: 'темна' }[document.documentElement.dataset.theme] || 'як у системі'}</button>
+    <button class="btn" type="button" data-m="out">${ic('out')} Вийти</button></div>`,
+    foot: '<div class="r"><button class="btn" type="button" data-close>Закрити</button></div>' });
+  d.addEventListener('click', ev => { const b = ev.target.closest('[data-m]'); if (!b) return; const m = b.dataset.m; if (m !== 'theme') d.close();
+    ({ pdf: () => printDialog('pdf'), backup: saveBackup, csv: exportCsv, open: openFile, ident: identForm, pw: () => pwForm(CU), out: logout,
+      theme: () => { const order = [undefined, 'light', 'dark']; const cur = document.documentElement.dataset.theme; const nx = order[(order.indexOf(cur) + 1) % 3];
+        if (nx) document.documentElement.dataset.theme = nx; else delete document.documentElement.dataset.theme; store.set('formular.theme', nx || ''); d.close(); moreMenu(); } })[m]?.(); });
+}
+
+/* ---------- події ---------- */
+document.addEventListener('click', ev => {
+  const t = ev.target;
+  if (t.closest('dialog') && !t.closest('[data-e]')) return;
+  const tab = t.closest('[data-tab]'); if (tab) { TAB = tab.dataset.tab; renderAll(); return; }
+  const sp = t.closest('[data-sp]'); if (sp) { SPREAD = +sp.dataset.sp; renderAll(); return; }
+  const en = t.closest('[data-e]'); if (en && !isGuest()) { const e = D.entries.find(x => x.id === en.dataset.e); if (e) { if (t.closest('dialog')) $('#dlg').close(); entryDetails(e); } return; }
+  const au = t.closest('[data-auth]'); if (au) { const a = authById(au.dataset.auth); authForm(holderOf(a), a); return; }
+  const zm = t.closest('[data-zoom]'); if (zm) { const s = D.sugg.find(x => x.id === zm.dataset.zoom); if (s) openDlg({ title: 'Знімок', wide: true, body: `<img src="${s.img}" alt="" style="width:100%">` }); return; }
+  const rem = t.closest('[data-rem]'); if (rem) { ({ save: saveFile, print: () => printDialog('print'), pdf: () => printDialog('pdf'), backup: saveBackup, pw: () => pwForm(CU) })[rem.dataset.rem](); return; }
+  const act = t.closest('[data-act]');
+  if (act) ({ 'holder-new': () => holderForm(), 'holder-edit': () => holderForm(D.holders.find(h => h.id === act.dataset.h)),
+    'auth-new': () => authForm(D.holders.find(h => h.id === act.dataset.h)), ident: identForm,
+    'lib-new': () => libAct('lib-new', act.dataset.k), 'lib-edit': () => libAct('lib-edit', act.dataset.k, act.dataset.i), 'lib-del': () => libAct('lib-del', act.dataset.k, act.dataset.i),
+    'lib-up': () => libAct('lib-up', act.dataset.k, act.dataset.i), 'lib-down': () => libAct('lib-down', act.dataset.k, act.dataset.i),
+    'my-pw': () => pwForm(CU), 'user-new': () => userForm(), 'user-edit': () => userForm(D.users.find(u => u.id === act.dataset.u)),
+    'sugg-new': suggestDialog, 'sugg-pdf': suggPdf, 'sugg-st': () => { if (!can('suggest')) return; const s = D.sugg.find(x => x.id === act.dataset.i); s.status = s.status === 'done' ? 'new' : 'done'; changed(); },
+    backup: saveBackup, json: exportJson, csv: exportCsv, open: openFile })[act.dataset.act]?.();
+});
+document.addEventListener('keydown', ev => { if (ev.key === 'Enter' && ev.target.matches?.('tr[data-e]')) ev.target.click(); });
+$('#fab').addEventListener('click', () => entryForm());
+$('#b-save').addEventListener('click', saveFile);
+$('#b-print').addEventListener('click', () => printDialog('print'));
+$('#b-idea').addEventListener('click', suggestDialog);
+$('#b-more').addEventListener('click', moreMenu);
+window.addEventListener('beforeunload', ev => { if (dirty) { ev.preventDefault(); ev.returnValue = ''; } });
+
+/* ---------- запуск ---------- */
+let AUTO = null;
+function offerRestore() {
+  const auto = AUTO; AUTO = null;
+  if (!auto || !auto.data || !(auto.data.updatedAt > D.updatedAt) || isGuest()) return;
+  const d = openDlg({ title: 'Знайдено незбережені зміни', sub: `У цьому браузері є новіша версія даних від ${fdt(auto.data.updatedAt)}.`,
+    body: `<div class="note warn">У файлі записів: ${D.entries.length}, у браузері: ${(auto.data.entries || []).length}. Схоже, минулого разу зміни не збережено у файл.</div>`,
+    foot: `<button class="btn" type="button" data-a="no">Ні, залишити як у файлі</button><div class="r"><button class="btn go" type="button" data-a="yes">Відновити зміни</button></div>` });
+  $('[data-a="yes"]', d).addEventListener('click', () => { try { const me = CU.id; D = migrate(auto.data); finishMigration(); dirty = true; CU = D.users.find(u => u.id === me) || CU; } catch { /* */ } d.close(); renderAll(); });
+  $('[data-a="no"]', d).addEventListener('click', () => { autosave(); d.close(); });
+}
+(function boot() {
+  const th = store.get('formular.theme'); if (th) document.documentElement.dataset.theme = th;
+  let fromFile = null;
+  try { const t = $('#fm-data').textContent.trim(); fromFile = t ? JSON.parse(t) : null; } catch { fromFile = null; }
+  try { D = fromFile ? migrate(fromFile) : blank(); } catch (e) { D = blank(); }
+  finishMigration();
+  try { AUTO = JSON.parse(store.get('formular.autosave.' + D.id) || 'null'); } catch { AUTO = null; }
+  if (!fromFile || (fromFile.schema || 1) < SCHEMA) { dirty = !!fromFile; }
+  const sid = sess.get(SKEY()), u = sid && D.users.find(x => x.id === sid && x.active !== false);
+  if (u) login(u); else showLogin();
+})();
+</script></body></html>

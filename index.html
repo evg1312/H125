@@ -1,4 +1,50 @@
 <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приватний Лендінг</title>
+
+    <!-- Стилі екрана блокировки -->
+    <style>
+        #lock-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #1a1a1a; color: white; display: flex;
+            flex-direction: column; align-items: center; justify-content: center;
+            z-index: 99999; font-family: system-ui, -apple-system, sans-serif;
+        }
+        .pass-box { background: #2a2a2a; padding: 40px 30px; border-radius: 12px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .pass-box h2 { margin-top: 0; font-size: 24px; }
+        .pass-box p { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        .pass-box input { padding: 12px; font-size: 16px; margin-bottom: 15px; width: 240px; border-radius: 6px; border: 1px solid #444; background: #333; color: white; outline: none; text-align: center; }
+        .pass-box input:focus { border-color: #007bff; }
+        .pass-box button { padding: 12px 24px; font-size: 16px; font-weight: bold; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 6px; width: 100%; transition: background 0.2s; }
+        .pass-box button:hover { background: #0056b3; }
+        .error-msg { color: #ff6b6b; margin-top: 15px; font-size: 14px; display: none; }
+        
+        /* Початково приховуємо сам сайт */
+        #main-content { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ЕКРАН АВТОРИЗАЦІЇ -->
+    <div id="lock-screen">
+        <div class="pass-box">
+            <h2>Доступ обмежено</h2>
+            <p>Введіть пароль для перегляду сайту</p>
+            <input type="password" id="password-input" placeholder="Пароль" onkeydown="if(event.key === 'Enter') checkPassword()"><br>
+            <button onclick="checkPassword()">Увійти</button>
+            <div id="error" class="error-msg">Невірний пароль! Спробуйте ще раз.</div>
+        </div>
+    </div>
+
+
+    <!-- 2. ОСНОВНИЙ КОНТЕНТ ВАШОГО САЙТУ -->
+    <div id="main-content">
+        
+        <!-- ВСТАВТЕ СЮДИ весь ваш старий код лендингу (текст, картинки, блоки) -->
+        <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -78,5 +124,30 @@
         <a href="59.html" class="btn">59</a>
     </div>
 
+</body>
+</html>
+        <!-- Кінець вашого коду -->
+
+    </div>
+
+
+    <!-- 3. СКРИПТ ПЕРЕВІРКИ -->
+    <script>
+        function checkPassword() {
+            // Замініть '1467' на ваш будь-який секретний пароль
+            const correctPassword = "1467"; 
+            
+            const enteredPassword = document.getElementById("password-input").value;
+            const errorDiv = document.getElementById("error");
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            } else {
+                errorDiv.style.display = "block";
+                document.getElementById("password-input").value = "";
+            }
+        }
+    </script>
 </body>
 </html>
